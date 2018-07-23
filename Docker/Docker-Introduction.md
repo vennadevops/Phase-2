@@ -6,7 +6,7 @@
 	3. Important docker commands.
 
 
-## DOCKER INSTALLATION
+## 1. DOCKER INSTALLATION
 
 Reference: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html#install_docker
 
