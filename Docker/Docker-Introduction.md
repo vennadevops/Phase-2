@@ -4,6 +4,8 @@
 	1. Installing the docker.
 	2. A practical example with Docker.
 	3. Important docker commands.
+	4. Pull the images from dockerhub.
+	5. 
 
 
 ## 1. DOCKER INSTALLATION
@@ -43,13 +45,13 @@ Reference: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-ba
 
 #### Create a docker file & build a docker image.
 
-	2.1. Creating the Dockerfile & copy the below script.
+#### 2.1. Creating the Dockerfile & copy the below script.
 
-Task: Create a container with Ubuntu OS, and then install apache on ubuntu container and then deploy a web file (i.e, html file) a hellow world program.
-Here is the docker work-flow.
-"Dockerfile"-----Build the Dockerfile----->"Docker Image"-----Run the docker Image----->"Docker Container" (you can sart, stop, restart, kill, rm the docker containers)
+#### Task: Create a container with Ubuntu OS, and then install apache on ubuntu container and then deploy a web file (i.e, html file) a hellow world program.
+#### Here is the docker work-flow.
+#### "Dockerfile"-----Build the Dockerfile----->"Docker Image"-----Run the docker Image----->"Docker Container" (you can sart, stop, restart, kill, rm the docker containers)
 
-vi Dockerfile
+#### vi Dockerfile
 
 	#Docker will donwload the the image ubuntu with the tag 12.04 and create a container with ubuntu OS with the version of 12.04
 	FROM ubuntu:12.04
@@ -73,104 +75,102 @@ vi Dockerfile
 
 	CMD ["/usr/sbin/apache2", "-D",  "FOREGROUND"]
 
-#7.2. Crete the docker image with the help of docker file "Dockerfile". In the below command, dot (.) represents the Dockerfile presents in the current directory. If docker file name is different, then pass the file name as: docker build -t image-name -f ./customDockerfile .
-sudo docker build -t hello-world .
+#### 2.2. Crete the docker image with the help of docker file "Dockerfile". In the below command, dot (.) represents the Dockerfile presents in the current directory. If docker file name is different, then pass the file name as: docker build -t image-name -f ./customDockerfile .
 
-# Image created with the name hello-world. Run the below command to list the images.
-sudo docker images
+	sudo docker build -t hello-world .
 
-# OR Run the below command to find the docker image with the name hello-world.
-sudo docker images --filter reference=hello-world
+#### 2.3. Image created with the name hello-world. Run the below command to list the local images.
+	
+	sudo docker images
 
-#Run the image to create the container
-sudo docker run -p 80:80 hello-world
+#### 2.4. Run the below command to find the docker image with the name hello-world.
 
-echo'
-Note:
-You can ignore the "Could not reliably determine the servers fully qualified domain name" message.
-'
+	sudo docker images --filter reference=hello-world
 
-#Copy the public IP from the instance description & paste it on any browser.
+#### 2.5. Run the image to create the container
 
-#Stop the Docker container by typing Ctrl + c
+	sudo docker run -p 80:80 hello-world
 
-#===============DOCKER IMAGE & CONTAINER END=================#
+##### Note: You can ignore the "Could not reliably determine the servers fully qualified domain name" message.
+##### Copy the public IP from the instance description & paste it on any browser.
+##### Stop the Docker container by typing Ctrl + c
 
+# 3. DOCKER COMMMANDS
 
-#============DOCKER COMMMANDS============#
-echo'
-1. docker --help
-2. docker -v or docker --version or docker version
-3. docker images: To get the list of all the local images.
-	docker rmi -f <image-name/id> : to remove the image.
-4. docker ps: To list the active containers.
-	docker ps -a: To list both active & inactive containers.
-	docker ps -a -s: To list both active & inactive containers along with the size of the container. -s gives you the container file size.
-	docker stop <container-id>: shutdown the container.
-	docker rm -f <container-id> Or docker rm -f <container-name/id>: First stop the docker container and then rm.
-	docker container logs <container-id>
-	docker container kill <container-id>
-	docker container rm <container-id>
-	docker container run <container-id>
-	docker container start <container-id>
+	1. docker --help
+	2. docker -v or docker --version or docker version
+	3. docker images: To get the list of all the local images.
+		docker rmi -f <image-name/id> : to remove the image.
+	4. docker ps: To list the active containers.
+		docker ps -a: To list both active & inactive containers.
+		docker ps -a -s: To list both active & inactive containers along with the size of the container. -s gives you the container file size.
+		docker stop <container-id>: shutdown the container.
+		docker rm -f <container-id> Or docker rm -f <container-name/id>: First stop the docker container and then rm.
+		docker container logs <container-id>
+		docker container kill <container-id>
+		docker container rm <container-id>
+		docker container run <container-id>
+		docker container start <container-id>
 
-5. docker run <image-name>: to run the image & it creates the container.
-	docker run -it --name venkat ubuntu : we can give a name to the running container.
-	docker ps: see the name in the list of active containers.
-	Ex:
-	1. docker run -it ubuntu: If the image not in local repo, docker will download/pull from the docker hub.
-	2. Once the container available automatically we will enter into the container i.e., 'ubuntu' in this example.
-	3. To exit from the container: exit
-	4. To exit from the container: Ctrl - p - Q.
-6. docker info
-7. docker rm $(docker ps -a -f status=exited -q) : to remove all the container which are exited/not running.
-8. docker build -t <image-name> -f <docker file path>
-	docker build --help
-9. docker run <image-name>
-	docker run --help
-10. docker pull: to pull the docker images from docker hub.
-11. docker login: login creds to docker hub to push our own image from local to hub.
-11. docker push <dockerid>/<image-name>: push the local image to docker hub. Befre push, the local image need to be tagged with docker id. 
-	docker tag <image-name> <dockerid>/<image-name>.
-12. docker stop <container-id>: shutdown the container.
-13. docker kill <container-id>: kills the execution of the contaner comopletely.
-14. docker exec: This command is used to access an running container and perform operations inside the container.
-	docker exec -it <container-id> bash
-15. docker commit <container-id> <new-image-name> or docker commit <container-id> <docker-hub-id>/<new-image-name>: Create the new image from the modified running container.
-15. docker export: Save the container as tar file in local machine.
-	docker export --output="MyDocker.tar" <container-id>
-16. docker import:
-	docker import <path/imagetarfile>
-'
-#============PULL THE IMAGES from Docker hub============#
+	5. docker run <image-name>: to run the image & it creates the container.
+		docker run -it --name venkat ubuntu : we can give a name to the running container.
+		docker ps: see the name in the list of active containers.
+		Ex:
+		1. docker run -it ubuntu: If the image not in local repo, docker will download/pull from the docker hub.
+		2. Once the container available automatically we will enter into the container i.e., 'ubuntu' in this example.
+		3. To exit from the container: exit
+		4. To exit from the container: Ctrl - p - Q.
+	6. docker info
+	7. docker rm $(docker ps -a -f status=exited -q) : to remove all the container which are exited/not running.
+	8. docker build -t <image-name> -f <docker file path>
+		docker build --help
+	9. docker run <image-name>
+		docker run --help
+	10. docker pull: to pull the docker images from docker hub.
+	11. docker login: login creds to docker hub to push our own image from local to hub.
+	11. docker push <dockerid>/<image-name>: push the local image to docker hub. Befre push, the local image need to be tagged with docker id. 
+		docker tag <image-name> <dockerid>/<image-name>.
+	12. docker stop <container-id>: shutdown the container.
+	13. docker kill <container-id>: kills the execution of the contaner comopletely.
+	14. docker exec: This command is used to access an running container and perform operations inside the container.
+		docker exec -it <container-id> bash
+	15. docker commit <container-id> <new-image-name> or docker commit <container-id> <docker-hub-id>/<new-image-name>: Create the new image from the modified running container.
+	15. docker export: Save the container as tar file in local machine.
+		docker export --output="MyDocker.tar" <container-id>
+	16. docker import:
+		docker import <path/imagetarfile>
 
-echo'
-ex: Create a new container by install ubuntu OS
-'
+# 4. PULL THE IMAGES from Docker hub
 
-#Note: You no need to run as sudo user if you have sudo permissions. If you don't have sudo permissions, you can run all the commands as sudo user.
+#### Note: You no need to run as sudo user if you have sudo permissions. If you don't have sudo permissions, you can run all the commands as sudo user.
 
-#Ex-1. It will download the image "ubuntu" from Docker hub and install the ubuntu then login to ubuntu.
-sudo docker run -it ubuntu 
+#### Ex-1. It will download the image "ubuntu" from Docker hub and install the ubuntu then login to ubuntu.
 
-#Ex-2.1. First Pull the docker images from docker hub
-sudo docker pull ubuntu
+	sudo docker run -it ubuntu 
 
-#Ex-2.2. Now, Run the pulled image 'ubuntu'
-sudo docker run -it ubuntu
+#### Ex-2.1. First Pull the docker images from docker hub
 
-#Ex-3.1. First Pull the docker images from docker hub
-sudo docker pull centos
+	sudo docker pull ubuntu
 
-#Ex-3.2. Now, Run the pulled image 'centos'
-sudo docker run -it centos
+#### Ex-2.2. Now, Run the pulled image 'ubuntu'
 
-#see the list of images which are available in your local machine.
-sudo docker images
+	sudo docker run -it ubuntu
 
-#============Install Jenkins & Nexus on centos images===========#
+#### Ex-3.1. First Pull the docker images from docker hub
 
-#Refer: https://newfivefour.com/unix-docker-tutorial-expose-service-tomcat.html
+	sudo docker pull centos
+
+#### Ex-3.2. Now, Run the pulled image 'centos'
+
+	sudo docker run -it centos
+
+#### see the list of images which are available in your local machine.
+
+	sudo docker images
+
+# 5. Exampl: Create images for Jenkins & Nexus on centos.
+
+Reference: https://newfivefour.com/unix-docker-tutorial-expose-service-tomcat.html
 
 #The image 'centos' will be downloaded/pulled from docker hub and then the container will run. Also, we can enter into the the centerod in bach mode.
 #As of now, it is an empty container.
