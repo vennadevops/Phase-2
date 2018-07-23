@@ -214,10 +214,10 @@ Reference: https://newfivefour.com/unix-docker-tutorial-expose-service-tomcat.ht
 	
 	Ex: http://18.191.134.246:32770
 
-##### 5.11. To execute commands & enter into the running container
+##### 5.11. To execute commands & enter into the running container. See this link for more examples fo exec: https://docs.docker.com/engine/reference/commandline/exec/
 
 	docker exec -it c78b43d648d9 bash
 	
 	
-Note: You can do the same steps for nexus installation. Find the same Jenkins & Nexus installation steps/commands from Phase-1 Or the files Java-Tomcat-maven-git-Jenkins.md & NexusSetup.md
+Note: You can do the same steps for nexus installation. Find the same Jenkins & Nexus installation steps/commands from Phase-1 Or the files Java-Tomcat-maven-git-Jenkins.md & NexusSetup.md. Download Phase-1 & Phase-2 docs here under the folder "Docker".
 
