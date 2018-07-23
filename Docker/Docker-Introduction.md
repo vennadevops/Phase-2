@@ -1,79 +1,77 @@
-#Reference: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html#install_docker
+# Docker
 
-echo' This document contains
-1. Installing the docker.
-2. A practical example with Docker.
-3. Important docker commands.
-'
+### This document contains
+	1. Installing the docker.
+	2. A practical example with Docker.
+	3. Important docker commands.
 
-#1. Launch an instance with the Amazon Linux AMI (by default 'docker' installed one Amazon machines).
 
-#2. Connect to your instance & login to root.
-sudo -i
+## DOCKER INSTALLATION
 
-#===============DOCKER INSTALLATION START=================#
+Reference: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html#install_docker
 
-#by default 'docker' installed one Amazon machines. check 'docker --version'. If does not exists, install docker on linux machines as follows. If you are practising on ubuntu machines, refer Docker-Practice-1.txt file for installation Docker on ubuntu machines.
+	1.1. Launch an instance with the Amazon Linux AMI (by default 'docker' installed one Amazon machines).
 
-#3. update the packages.
-sudo yum update -y
+	1.2. Connect to your instance & login to root.
+		sudo -i
+#### By default 'docker' installed one Amazon machines. check 'docker --version'. If does not exists, install docker on linux machines as follows. If you are practising on ubuntu machines, refer Docker-Practice-1.txt file for installation Docker on ubuntu machines.
 
-#4. Install the docker.
-sudo yum install -y docker
+	1.3. update the packages.
+		sudo yum update -y
 
-echo ' After the installation docker files created in below location.
-[root@ip-172-31-21-32 ~]# find / -name "docker"
-/usr/bin/docker
-/usr/share/bash-completion/docker
-/var/lib/docker
-/etc/sysconfig/docker
-/etc/rc.d/init.d/docker
-'
+	1.4. Install the docker.
+		sudo yum install -y docker
 
-#5. start the docker.
-sudo service docker start
+	Note: After the installation docker files created in below location.
+		[root@ip-172-31-21-32 ~]# find / -name "docker"
+		/usr/bin/docker
+		/usr/share/bash-completion/docker
+		/var/lib/docker
+		/etc/sysconfig/docker
+		/etc/rc.d/init.d/docker
 
-#6. docker version: docker -v
-sudo docker --version
+	1.5. start the docker.
+		sudo service docker start
 
-sudo docker --help
+	1.6. docker version: docker -v
+		sudo docker --version
 
-#===============DOCKER INSTALLATION END=================#
+	1.7. Dokcer commands:
+		sudo docker --help
 
-#===============DOCKER IMAGE & CONTAINER START=================#
+## 2. Example: DOCKER IMAGE & CONTAINER
 
-#7. Create a docker file & build a docker image.
+#### Create a docker file & build a docker image.
 
-#7.1. Creating the docker file.
+	2.1. Creating the Dockerfile & copy the below script.
 
-# Task: Create a container with Ubuntu OS, and then install apache on ubuntu container and then deploy a web file (i.e, html file) a hellow world program.
-# Here is the docker work-flow.
-# "Dockerfile"-----Build the Dockerfile----->"Docker Image"-----Run the docker Image----->"Docker Container" (you can sart, stop, restart, kill, rm the docker containers)
+Task: Create a container with Ubuntu OS, and then install apache on ubuntu container and then deploy a web file (i.e, html file) a hellow world program.
+Here is the docker work-flow.
+"Dockerfile"-----Build the Dockerfile----->"Docker Image"-----Run the docker Image----->"Docker Container" (you can sart, stop, restart, kill, rm the docker containers)
+
 vi Dockerfile
 
-echo'
-#Docker will donwload the the image ubuntu with the tag 12.04 and create a container with ubuntu OS with the version of 12.04
-FROM ubuntu:12.04
+	#Docker will donwload the the image ubuntu with the tag 12.04 and create a container with ubuntu OS with the version of 12.04
+	FROM ubuntu:12.04
 
-# Install dependencies
-RUN apt-get update -y
-RUN apt-get install -y apache2
+	# Install dependencies
+	RUN apt-get update -y
+	RUN apt-get install -y apache2
 
-# Install apache and write hello world message
-RUN echo "Hello World!" > /var/www/index.html
+	# Install apache and write hello world message
+	RUN echo "Hello World!" > /var/www/index.html
 
-# Configure apache
-RUN a2enmod rewrite
-RUN chown -R www-data:www-data /var/www
-ENV APACHE_RUN_USER www-data
-ENV APACHE_RUN_GROUP www-data
-ENV APACHE_LOG_DIR /var/log/apache2
+	# Configure apache
+	RUN a2enmod rewrite
+	RUN chown -R www-data:www-data /var/www
+	ENV APACHE_RUN_USER www-data
+	ENV APACHE_RUN_GROUP www-data
+	ENV APACHE_LOG_DIR /var/log/apache2
 
-# apache available on 8080 port.
-EXPOSE 80
+	# apache available on 8080 port.
+	EXPOSE 80
 
-CMD ["/usr/sbin/apache2", "-D",  "FOREGROUND"]
-' >> Dockerfile
+	CMD ["/usr/sbin/apache2", "-D",  "FOREGROUND"]
 
 #7.2. Crete the docker image with the help of docker file "Dockerfile". In the below command, dot (.) represents the Dockerfile presents in the current directory. If docker file name is different, then pass the file name as: docker build -t image-name -f ./customDockerfile .
 sudo docker build -t hello-world .
