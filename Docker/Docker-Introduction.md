@@ -2,10 +2,10 @@
 
 ### This document contains
 	1. Installing the docker.
-	2. A practical example with Docker.
+	2. Example-1.
 	3. Important docker commands.
 	4. Pull the images from dockerhub.
-	5. 
+	5. Example-2.
 
 
 ## 1. DOCKER INSTALLATION
@@ -168,40 +168,56 @@ Reference: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-ba
 
 	sudo docker images
 
-# 5. Exampl: Create images for Jenkins & Nexus on centos.
+# 5. Example: Create images for Jenkins & Nexus on centos.
 
 Reference: https://newfivefour.com/unix-docker-tutorial-expose-service-tomcat.html
 
-#The image 'centos' will be downloaded/pulled from docker hub and then the container will run. Also, we can enter into the the centerod in bach mode.
-#As of now, it is an empty container.
-docker run -t -i centos /bin/bash
+##### 5.1. The image 'centos' will be downloaded/pulled from docker hub and then the container will run. Also, we can enter into the the centerod in bash mode. As of now, it is an empty container.
+	docker run -t -i centos /bin/bash
 
-#Install the required tools you want: Git, Java, Maven, Tomcat, Jenkins
+##### 5.2. Install the required tools you want: Git, Java, Maven, Tomcat, Jenkins
 
-#Exit from the running container centos
-#ctrl-p then ctrl-q
+##### 5.3. Exit from the running container centos
 
-#List the active containers
-docker ps -a
+	ctrl-p then ctrl-q
 
-#Commit the new chnages and create new image with installed tools.
-docker commit <container-id> image_name
+##### 5.4. List the active containers
 
-#List the local images.
-docker images
+	docker ps -a
 
-#Run the newly created image.
-docker run -i -t -p 8080 image_name /bin/bash
+##### 5.5. Commit the new chnages and create new image with installed tools.
 
-#start tomcat server to setup Jenkins
+	docker commit <container-id> <image_name>
 
-ctrl-p then ctrl-q 
+##### 5.6. List the local images.
 
-#List the containers
-docker ps
+	docker images
 
-#Launch the URL: http://<public-ip>:<container-port>
+##### 5.7. Run the newly created image.
 
-#to execute commands & enter into the running container
-docker exec -it c78b43d648d9 bash
+	docker run -i -t -p 8080 image_name /bin/bash
+
+##### 5.8. Start tomcat server to setup Jenkins
+
+	ctrl-p then ctrl-q 
+
+##### 5.9. List the containers
+
+	docker ps
+	
+	[root@ip-172-31-41-229 ~]# docker ps
+	CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                     NAMES
+	3e60b077ca4b        centos_jenkins      "/bin/bash"         25 seconds ago      Up 24 seconds       0.0.0.0:32770->8080/tcp   stoic_khorana
+	3c4fc7e5ce59        nexus_centos        "/bin/bash"         44 minutes ago      Up 43 minutes       0.0.0.0:32768->8080/tcp   admiring_noether
+
+##### 5.10. Launch the URL: http://<public-ip>:<container-port>.
+	
+	Ex: http://18.191.134.246:32770
+
+##### 5.11. To execute commands & enter into the running container
+
+	docker exec -it c78b43d648d9 bash
+	
+	
+Note: You can do the same steps for nexus installation. Find the same Jenkins & Nexus installation steps/commands from Phase-1 Or the files Java-Tomcat-maven-git-Jenkins.md & NexusSetup.md
 
