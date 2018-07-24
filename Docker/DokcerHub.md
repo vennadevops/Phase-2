@@ -1,6 +1,10 @@
 # Install Docker in ubuntu machine.
     
     Create Ubuntu instance in AWS: Ubuntu Server 16.04 LTS (HVM), SSD Volume Type - ami-5e8bb23b
+    
+    Connect to ubuntu instance.
+    
+#### Run the below commands.
 
     sudo apt-get update
 
