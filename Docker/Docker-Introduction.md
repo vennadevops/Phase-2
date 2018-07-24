@@ -139,6 +139,7 @@ Reference: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-ba
 		docker export --output="MyDocker.tar" <container-id>
 	16. docker import:
 		docker import <path/imagetarfile>
+	17. docker images -q: It returns only the docker image id.
 
 # 4. PULL THE IMAGES from Docker hub
 
