@@ -2,7 +2,7 @@
 
 1. Signin/Signup: https://hub.docker.com/
 
-2. Create a repository or organization.
+2. Create a repository or organization. ex: apacherepo
 
 3. Create a docker file for apache installation.
     sudo vi DockerFileApache
@@ -29,16 +29,27 @@
 
           CMD ["/usr/sbin/apache2", "-D",  "FOREGROUND"]
     
-4. Build the image: docker build -t apache:1.0 -f ./DockerFileApache .
+4. Build the image: docker build -t <imageName>:<tagVersion> -f ./<DockerFilePath> .
 
-   docker images
+        ex: docker build -t apache:1.0 -f ./DockerFileApache .
+        sudo docker images
    
 5. Run the command to login to docker hub registry: docker login
 
+        ex: sudo docker login
+
 6. Tag the local image with docker repo: docker tag imageID dokcerhubID/repoName:1.0
+
+        ex: sudo docker tag 3bdf41be5265 venkatasykam/apacherepo:1.0
 
 7. Push the image to dokcer hub: docker push dokcerhubID/repoName:1.0
 
-8. sudo docker pull <dokcerhubID>/repoName:1.0
+        ex: sudo docker push venkatasykam/apacherepo:1.0
+        
+8. Pull the image anywhere: sudo docker pull <dokcerhubID>/repoName:1.0
+    
+        ex: ex: sudo docker pull venkatasykam/apacherepo:1.0
 
-9. sudo docker run -p 80:80 venkatasykam/demorepo:1.0
+9. Run the image: sudo docker run -p 80:80 dokcerhubID/repoName:1.0
+
+        ex: sudo docker run -p 80:80 venkatasykam/apacherepo:1.0
