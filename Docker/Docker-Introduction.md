@@ -140,6 +140,15 @@ Reference: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-ba
 	16. docker import:
 		docker import <path/imagetarfile>
 	17. docker images -q: It returns only the docker image id.
+	18. docker inspect <imaage_name/container>: see the details of an image or container.
+	19. docker history <imaage_name>: see all the commands that were run with an image via a container.
+	20. docker top ContainerID: you can see the top processes within a container.
+	21. docker stats ContainerID: to provide the statistics of a running container.
+	22. docker attach ContainerID: This command is used to attach to a running container. (to enter into the container)
+	23. docker pause ContainerID: This command is used to pause the processes in a running container.
+	24. docker unpause ContainerID: This command is used to unpause the processes in a running container.
+	25. sudo service docker stop: Stop the dokcer service.
+	26. sudo service docker start: Start the dokcer service.
 
 # 4. PULL THE IMAGES from Docker hub
 
