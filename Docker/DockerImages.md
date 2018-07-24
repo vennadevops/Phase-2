@@ -6,6 +6,8 @@ sudo docker inspect jenkins
 
 sudo docker run -p 8080:8080 -p 50000:50000 jenkins
 
+Launch the URL in any brwoser: http:publicIP:8080
+
 # Nexus image
 
     sudo docker pull sonatype/nexus
@@ -22,4 +24,6 @@ sudo docker run -p 8080:8080 -p 50000:50000 jenkins
     
     sudo docker inspect nginx
     
-    sudo docker run --publish 3000:80 nginx
+    sudo docker run --publish 8082:80 nginx
+    
+    Launch the URL in any brwoser: http:publicIP:8082
