@@ -8,5 +8,19 @@ Docker Compose is used to run multiple containers as a single service.
     
 Creating docker-compose: docker-compose.yml
 
+        version: '2'
+        services:
+          databases:
+            image: mysql
+            ports:
+            - "3306:3306"
+            environment:
+            - MYSQL_ROOT_PASSWORD=passowrd
+            - MYSQL_USER=user
+            - MYSQL_PASSWORD=password
+            - MYSQL_DATABASE=demodb
+          web:
+            image: nginx
+
 
       
