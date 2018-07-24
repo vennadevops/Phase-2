@@ -1,0 +1,39 @@
+#### Example-1:
+
+vi Dockerfile
+    
+      FROM ubuntu 
+
+      CMD ["echo" , "hello world"]
+    
+docker build -t myimage
+
+docker run myimage
+
+#### Example-2: Passing parameters to the containers using ENTRYPOINT
+
+vi Dockerfile
+
+    FROM ubuntu 
+
+    ENTRYPOINT ["echo"]
+    
+docker build -t myimage1
+
+docker run myimage1 "Hello World"
+
+#### Example-3: Creating Environment variables
+
+    FROM ubuntu 
+    MAINTAINER svnreddydevops1@gmail.com 
+    ENV var1=Dokcer var2=Demo
+    
+    docker build -t myimage2
+
+    sudo docker run -it myimage2 /bin/bash
+    
+    run the command "env" to see the list of environment varibales in the containers. Along with existing list you will see the defined environment variables var1, var2.
+    
+    
+
+
