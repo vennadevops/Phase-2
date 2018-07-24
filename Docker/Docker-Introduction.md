@@ -229,5 +229,7 @@ Reference: https://newfivefour.com/unix-docker-tutorial-expose-service-tomcat.ht
 	docker exec -it c78b43d648d9 bash
 	
 	
-Note: You can do the same steps for nexus installation. Find the same Jenkins & Nexus installation steps/commands from Phase-1 Or the files Java-Tomcat-maven-git-Jenkins.md & NexusSetup.md. Download Phase-1 & Phase-2 docs here under the folder "Docker".
+Note: 
+1. You can do the same steps for nexus installation. Find the same Jenkins & Nexus installation steps/commands from Phase-1 Or the files Java-Tomcat-maven-git-Jenkins.md & NexusSetup.md. Download Phase-1 & Phase-2 docs here under the folder "Docker".
+2. The –d option is used to run the container in detached mode. This is so that the container can run in the background.
 
