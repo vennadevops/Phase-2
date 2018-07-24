@@ -35,9 +35,9 @@
    
 5. Run the command to login to docker hub registry: docker login
 
-6. Tag the local image with docker repo: docker tag imageID <dokcerhubID>/repoName:1.0
+6. Tag the local image with docker repo: docker tag imageID dokcerhubID/repoName:1.0
 
-7. Push the image to dokcer hub: docker push <dokcerhubID>/repoName:1.0
+7. Push the image to dokcer hub: docker push dokcerhubID/repoName:1.0
 
 8. sudo docker pull <dokcerhubID>/repoName:1.0
 
