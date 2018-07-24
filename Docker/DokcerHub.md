@@ -29,7 +29,7 @@
 
           CMD ["/usr/sbin/apache2", "-D",  "FOREGROUND"]
     
-4. Build the image: docker build -t <imageName>:<tagVersion> -f ./<DockerFilePath> .
+4. Build the image: docker build -t imageName:tagVersion -f ./DockerFilePath .
 
         ex: docker build -t apache:1.0 -f ./DockerFileApache .
         sudo docker images
