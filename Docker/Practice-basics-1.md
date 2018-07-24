@@ -34,6 +34,14 @@ docker run myimage1 "Hello World"
     
     run the command "env" to see the list of environment varibales in the containers. Along with existing list you will see the defined environment variables var1, var2.
     
+#### Example-4: Creating directory if it does not exists.
+
+    FROM ubuntu 
+    MAINTAINER svnreddydevops1@gmail.com 
+    WORKDIR /newdirectory 
+    CMD pwd
+    
+    
     
 
 
