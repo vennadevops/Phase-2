@@ -1,3 +1,5 @@
+###### Interact with container: sudo docker exec -it [containerId] bash
+
 # Jenkins image
 
 sudo docker pull jenkins
@@ -27,3 +29,7 @@ Launch the URL in any brwoser: http:publicIP:8080
     sudo docker run --publish 8082:80 nginx
     
     Launch the URL in any brwoser: http:publicIP:8082
+    
+    Webpages location: /usr/share/nginx/html
+    
+
