@@ -1,5 +1,5 @@
 
-Refer: https://github.com/SonarSource/docker-sonarqube/blob/master/recipes.md
+Refer: https://github.com/blacklabelops/jira/blob/master/docker-compose.yml
 
 1. Create any folder. 
 
