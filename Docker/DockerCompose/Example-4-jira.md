@@ -85,7 +85,7 @@ Refer: https://github.com/blacklabelops/jira/blob/master/docker-compose.yml
 
 
 
-5. Launch the URL: http://IP_Address:9000.
+5. Launch the URL: http://IP_Address:8888.
 
 #### Check the postgresql database whether jira really connected or not. Verifying whether the tables are created or not in postgresql db server.
 
