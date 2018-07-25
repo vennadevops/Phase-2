@@ -10,6 +10,8 @@ sudo docker run -p 8080:8080 -p 50000:50000 jenkins
 
 Launch the URL in any brwoser: http:publicIP:8080
 
+Note: Run Jenkins on different port number:  sudo docker run -p 8081:8080 -p 50001:50000 jenkins
+
 # Nexus image
 
     sudo docker pull sonatype/nexus
