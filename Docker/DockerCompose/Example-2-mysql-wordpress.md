@@ -12,78 +12,113 @@ Reference: https://docs.docker.com/compose/wordpress/
 
       vi docker-compose.yml
 
-        version: '3.3'
-        services:
-           db:
-             image: mysql:5.7
-             volumes:
-               - db_data:/var/lib/mysql
-             restart: always
-             environment:
-               MYSQL_ROOT_PASSWORD: somewordpress
-               MYSQL_DATABASE: wordpress
-               MYSQL_USER: wordpress
-               MYSQL_PASSWORD: wordpress
-           wordpress:
-             depends_on:
-               - db
-             image: wordpress:latest
-             ports:
-               - "8000:80"
-             restart: always
-             environment:
-               WORDPRESS_DB_HOST: db:3306
-               WORDPRESS_DB_USER: wordpress
-               WORDPRESS_DB_PASSWORD: wordpress
-        volumes:
-            db_data:
+            version: "2"
+            services:
+              sonarqube:
+                image: sonarqube
+                ports:
+                  - "9000:9000"
+                networks:
+                  - sonarnet
+                environment:
+                  - SONARQUBE_JDBC_URL=jdbc:postgresql://db:5432/sonar
+                volumes:
+                  - sonarqube_conf:/opt/sonarqube/conf
+                  - sonarqube_data:/opt/sonarqube/data
+                  - sonarqube_extensions:/opt/sonarqube/extensions
+                  - sonarqube_bundled-plugins:/opt/sonarqube/lib/bundled-plugins
+              db:
+                image: postgres
+                networks:
+                  - sonarnet
+                environment:
+                  - POSTGRES_USER=sonar
+                  - POSTGRES_PASSWORD=sonar
+                volumes:
+                  - postgresql:/var/lib/postgresql
+                  # This needs explicit mapping due to https://github.com/docker-library/postgres/blob/4e48e3228a30763913ece952c611e5e9b95c8759/Dockerfile.template#L52
+                  - postgresql_data:/var/lib/postgresql/data
+            networks:
+              sonarnet:
+                driver: bridge
+            volumes:
+              sonarqube_conf:
+              sonarqube_data:
+              sonarqube_extensions:
+              sonarqube_bundled-plugins:
+              postgresql:
+              postgresql_data:
             
 4. Now, run the command, docker-compose up -d
 
    At the end of the execution, you will see the log as below.
    
-      Status: Downloaded newer image for wordpress:latest
-      Creating my_wordpress_db_1
-      Creating my_wordpress_wordpress_1
+            Status: Downloaded newer image for postgres:latest
+            Creating sonar_sonarqube_1 ... done
+            Creating sonar_db_1        ... done
 
-5. Launch the URL: http://IP_Address:8000 (dont do anything as of now).
 
-#### Check the mysql database whether wordpress really connected or not. Verifying whether the tables are created or not in mysql db server.
+5. Launch the URL: http://IP_Address:9000.
 
-6. Interact with mysql container: (Run the command "dokcer ps" to find the mysql container id)
+#### Check the postgresql database whether sonar really connected or not. Verifying whether the tables are created or not in mysql db server.
 
-      docker exec -it [container_id] bash
-      
-      6.1. Get into the mysql command line: mysql -u [wordpress] -p;
-      
-            ex: mysql -u wordpress -p;
-            
-      6.2. List the databases: show databases;
-      
-      6.3. Connect to database: use [dbname];
-      
-            ex: use wordpress;
-            
-      6.4. List the tables: show tables;
-      
-      as of now, you will not see the tables.
-      
-      Ctrl+p and then Ctrl+q (to exit from the container without stopping)
-
-7. Interact with wordpress container: (Run the command "dokcer ps" to find the mysql container id)
+6. Interact with postgresql container: (Run the command "dokcer ps" to find the postgresql container id)
 
       docker exec -it [container_id] bash
       
-      7.1. find / -name "wp-config.php"
+      6.1. login as postgres use: su - postgres
       
-            Here you can find the DB Config details: /var/www/html/wp-config.php
-
-      7.2. run the command & check the file whether the mysql details configured or not: cat /var/www/html/wp-config.php
+            ex: su - postgres
+            
+      6.2. get imto the postgre sql command line: psql
+      
+      6.3. List the databases: \list
+      
+            ex: \list
+            
+      6.4. connect to the database: \connect sonar
+      
+      6.5. List the tables: \dt
+      
+      6.6. Exit from the database: \q
+     
+      6.7. logout from the postgres user: exit
       
       Ctrl+p and then Ctrl+q (to exit from the container without stopping)
-      
-8. Launch the URL: http://IP_Address:8000 and then register with username & pwd.
 
-9. Now, check the mysql database whether the tables are created or not. For that, connect to the mysql container as per the step-6.
+See the log below:
 
-      
+            root@e66d3de209f5:/# su - postgres
+            No directory, logging in with HOME=/
+            $
+            $
+            $ psql
+            psql (10.4 (Debian 10.4-2.pgdg90+1))
+            Type "help" for help.
+
+            postgres=# \list
+                                             List of databases
+               Name    |  Owner   | Encoding |  Collate   |   Ctype    |   Access privileges
+            -----------+----------+----------+------------+------------+-----------------------
+             postgres  | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+             sonar     | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+             template0 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+                       |          |          |            |            | postgres=CTc/postgres
+             template1 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+                       |          |          |            |            | postgres=CTc/postgres
+            (4 rows)
+
+            postgres=# \connect sonar
+            You are now connected to database "sonar" as user "postgres".
+            sonar=# \dt
+             public | snapshots                | table | sonar
+             public | user_roles               | table | sonar
+             public | user_tokens              | table | sonar
+             public | users                    | table | sonar
+             public | webhook_deliveries       | table | sonar
+             public | webhooks                 | table | sonar
+            (56 rows)
+            sonar=# \q
+            could not save history to file "/home/postgres/.psql_history": No such file or directory
+            $ exit
+            root@e66d3de209f5:/#
