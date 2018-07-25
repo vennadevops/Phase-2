@@ -24,7 +24,21 @@ Creating docker-compose: docker-compose.yml
         ports: 
         - 8082:80
             
-Launch the URL: http://publicIP:8082/
+    Launch the URL: http://publicIP:8082/
+
+    Interatct with container: docker exec -it a726ec0223a7 bash
+
+    Get into my sql command line: mysql -u [user-name] -p;
+
+            ex: mysql -u user -p;
+            
+    See the list of databses: show databases;
+    
+    See the mysql commands: https://gist.github.com/hofmannsven/9164408
+    
+
+
+
             
 https://docs.docker.com/compose/samples-for-compose/#samples-tailored-to-demo-compose
 
