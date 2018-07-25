@@ -13,7 +13,6 @@ Reference: https://docs.docker.com/compose/wordpress/
       vi docker-compose.yml
 
   version: '3.3'
-
   services:
      db:
        image: mysql:5.7
@@ -25,7 +24,6 @@ Reference: https://docs.docker.com/compose/wordpress/
          MYSQL_DATABASE: wordpress
          MYSQL_USER: wordpress
          MYSQL_PASSWORD: wordpress
-
      wordpress:
        depends_on:
          - db
