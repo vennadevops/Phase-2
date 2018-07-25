@@ -1,6 +1,16 @@
-Reference:
+Reference: https://docs.docker.com/compose/wordpress/
 
+1. Create any folder. 
 
+      ex: mkdir my_wordpress
+
+2. Change directory to new folder: 
+
+      ex: cd my_wordpress
+      
+3. Create a yal file and add the below script. If you are getting the error with below script, copy the same content from docker-compose.yml file which is attahced.
+
+      vi docker-compose.yml
 
   version: '3.3'
 
