@@ -122,3 +122,5 @@ See the log below:
             could not save history to file "/home/postgres/.psql_history": No such file or directory
             $ exit
             root@e66d3de209f5:/#
+
+![image](https://user-images.githubusercontent.com/24622526/43191467-c565e314-8fea-11e8-8ac9-f930505745a2.png)
