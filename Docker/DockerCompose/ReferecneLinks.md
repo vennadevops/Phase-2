@@ -6,3 +6,5 @@ https://docs.docker.com/compose/compose-file/#context
 
 https://github.com/blacklabelops/jira/blob/master/Dockerfile
 
+https://forums.docker.com/t/host-path-of-volume/12277
+
