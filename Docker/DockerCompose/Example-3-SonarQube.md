@@ -61,7 +61,7 @@ Refer: https://github.com/SonarSource/docker-sonarqube/blob/master/recipes.md
 
 5. Launch the URL: http://IP_Address:9000.
 
-#### Check the postgresql database whether sonar really connected or not. Verifying whether the tables are created or not in mysql db server.
+#### Check the postgresql database whether sonar really connected or not. Verifying whether the tables are created or not in postgresql db server.
 
 6. Interact with postgresql container: (Run the command "dokcer ps" to find the postgresql container id)
 
