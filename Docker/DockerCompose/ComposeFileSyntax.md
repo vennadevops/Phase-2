@@ -24,3 +24,39 @@ directives used to set up and configure containers/services:
 | depends_on | Sets a service as a dependency for the current block-defined container |
 | port | Maps a port from the container to the host in the following manner: host:container |
 | links | Link this service to any other services in the Docker Compose file by specifying their names here. |
+
+
+Example-1: run the image "nginx"
+
+Usually if we want to run an image, we will run the command: docker run -d -p 8888:80 nginx
+
+How to run it usinf docker compose: and then launch the URL http://publicIp:8888
+
+    version: '3'
+
+    services:
+      webserver:
+        image: nginx:latest
+        ports:
+          - "8888:80"
+          
+If you want to give the name to your container, you can add the durective 'container_name'
+
+    version: '3'
+    services:
+      webserver:
+        image: nginx:latest
+        container_name: nginx_web
+        ports:
+          - "8888:80"
+      cicd:
+        image: jenkins:latest
+        container_name: jenkins_ci
+        ports:
+          - "8080:80"
+        
+![image](https://user-images.githubusercontent.com/24622526/43244727-52351746-909b-11e8-9ec9-70d8fa6b5fcc.png)
+
+Launch URL: http://publicIp:8888 & http://publicIp:8080
+
+
