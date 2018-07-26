@@ -26,7 +26,7 @@ directives used to set up and configure containers/services:
 | links | Link this service to any other services in the Docker Compose file by specifying their names here. |
 
 
-Example-1: run the image "nginx"
+#### Example-1: run the image "nginx"
 
 Usually if we want to run an image, we will run the command: docker run -d -p 8888:80 nginx
 
@@ -46,7 +46,7 @@ Run yml using docker compose: dokcer-compose up -d
 
 Launch the URL http://publicIp:8888
 
-Example-2: Run tow images using yml file. Here, adding jenkins image details to the existing yml file. Update dokcer-compose.yml file with below snippet.
+#### Example-2: Run two images using docker compose. Here, adding jenkins image details to the existing yml file. Update dokcer-compose.yml file with below snippet.
 
 Note: If you want to give the name to your container, you can add the durective 'container_name'
 
@@ -71,4 +71,4 @@ docker ps: You will see the result as below.
 
 Launch URL: http://publicIp:8888 & http://publicIp:8080
 
-
+#### Example-3: Run three images using docker compose. Here, adding apache image details to the existing yml file. Update dokcer-compose.yml file with below snippet.
