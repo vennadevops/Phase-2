@@ -93,11 +93,21 @@ Launch URL: http://publicIp:8888 & http://publicIp:8080
 
 ![image](https://user-images.githubusercontent.com/24622526/43245344-80bde41a-909d-11e8-9f33-70f4728bc266.png)
 
+docker-compose up -d
+
+docker ps
+
+![image](https://user-images.githubusercontent.com/24622526/43245592-66d2865e-909e-11e8-8e37-27416ea72749.png)
+
+
+
 Launch: http://ipAddress:8081
 
 ![image](https://user-images.githubusercontent.com/24622526/43245383-a1148b38-909d-11e8-9cc2-13c47c12cddf.png)
 
 Launch: http://ipAddress:8082
+
+
 
 ![image](https://user-images.githubusercontent.com/24622526/43245404-b10af6da-909d-11e8-8e22-721ce3fe24f3.png)
 
