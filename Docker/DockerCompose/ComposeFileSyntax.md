@@ -1,5 +1,7 @@
 
-Refer: https://docs.docker.com/compose/compose-file/
+Refer: 
+https://docs.docker.com/compose/compose-file/
+https://www.linode.com/docs/applications/containers/how-to-use-docker-compose/
 
 A docker-compose.yml file is organized into four sections:
 
