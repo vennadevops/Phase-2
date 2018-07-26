@@ -30,7 +30,9 @@ Example-1: run the image "nginx"
 
 Usually if we want to run an image, we will run the command: docker run -d -p 8888:80 nginx
 
-How to run it usinf docker compose: and then launch the URL http://publicIp:8888
+How to compose yml file as to run nginx container.
+
+Create an yml file docker-compose.yml and add the below content.
 
     version: '3'
 
@@ -39,8 +41,14 @@ How to run it usinf docker compose: and then launch the URL http://publicIp:8888
         image: nginx:latest
         ports:
           - "8888:80"
-          
-If you want to give the name to your container, you can add the durective 'container_name'
+
+Run yml using docker compose: dokcer-compose up -d
+
+Launch the URL http://publicIp:8888
+
+Example-2: Run tow images using yml file. Here, adding jenkins image details to the existing yml file. Update dokcer-compose.yml file with below snippet.
+
+Note: If you want to give the name to your container, you can add the durective 'container_name'
 
     version: '3'
     services:
@@ -54,7 +62,11 @@ If you want to give the name to your container, you can add the durective 'conta
         container_name: jenkins_ci
         ports:
           - "8080:80"
-        
+
+Run yml using docker compose: dokcer-compose up -d
+
+docker ps: You will see the result as below.
+
 ![image](https://user-images.githubusercontent.com/24622526/43244727-52351746-909b-11e8-9ec9-70d8fa6b5fcc.png)
 
 Launch URL: http://publicIp:8888 & http://publicIp:8080
