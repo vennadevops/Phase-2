@@ -117,3 +117,18 @@ Launch: http://ipAddress:8083
 
 ![image](https://user-images.githubusercontent.com/24622526/43245428-c542ffbc-909d-11e8-92ea-e8aca5beb9c7.png)
 
+
+YML script syntax:
+
+version: '3.7'
+services:
+  [serviceName1]:
+     image: [image-name:tag]
+     container_name: nginx_web
+     ports:
+       - "[portNumber]:[actualPortNumber]"
+  [serviceName2]:
+     image: [image-name:tag]
+     container_name: nginx_web
+     ports:
+       - "[portNumber]:[actualPortNumber]"
