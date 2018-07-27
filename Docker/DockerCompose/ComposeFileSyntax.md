@@ -26,7 +26,7 @@ directives used to set up and configure containers/services:
 | depends_on | Sets a service as a dependency for the current block-defined container |
 | port | Maps a port from the container to the host in the following manner: host:container |
 | links | Link this service to any other services in the Docker Compose file by specifying their names here. |
-
+| container_name | Give the name to your container |
 
 #### Example-1: run the image "nginx"
 
