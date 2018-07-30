@@ -51,3 +51,8 @@ Note: Run Jenkins on different port number:  sudo docker run -p 8081:8080 -p 500
     docker run -d --net grid -e HUB_HOST=selenium-hub -v /dev/shm:/dev/shm selenium/node-firefox:3.13.0-argon
 
     Launch the URL in any brwoser: http://18.221.217.120:4444/grid/console
+
+
+   ##### Install firefox browser in ubuntu
+   
+    sudo apt-get install firefox
