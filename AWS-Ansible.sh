@@ -189,78 +189,82 @@ hostname ClientServer
 
 	8.5. Before & After run the ansible playbook:
 
-	![image](https://user-images.githubusercontent.com/24622526/43627977-08e0d938-96e8-11e8-8fad-b134a631c5c6.png)
+![image](https://user-images.githubusercontent.com/24622526/43627977-08e0d938-96e8-11e8-8fad-b134a631c5c6.png)
 	
-======
+---
 
-Scenario-1: Download an artifact from Nexus and depoy on TomCat.
+	Scenario-1: Download an artifact from Nexus and depoy on TomCat.
+
+	---
+	- hosts: amazonweb
+	  vars:
+	  - warName: jenkins.war
+	  - warRemotePath: /etc/wars/
+
+	  tasks:
+	  - name: Download WAR to server
+	    get_url:
+	      url: http://13.59.32.120:8081/nexus/content/repositories/releases/com/devops/webapp/WebApp/1.0.0-2/WebApp-1.0.0-2.war
+	      dest: /etc/wars/
+
+	  - name: Deploy WAR file
+	    command: mv /etc/wars/WebApp-1.0.0-2.war /var/lib/tomcat7/webapps/
 
 ---
-- hosts: amazonweb
-  vars:
-  - warName: jenkins.war
-  - warRemotePath: /etc/wars/
 
-  tasks:
-  - name: Download WAR to server
-    get_url:
-      url: http://13.59.32.120:8081/nexus/content/repositories/releases/com/devops/webapp/WebApp/1.0.0-2/WebApp-1.0.0-2.war
-      dest: /etc/wars/
+	Scenario-2: Call one yml file from other yml file. 
 
-  - name: Deploy WAR file
-    command: mv /etc/wars/WebApp-1.0.0-2.war /var/lib/tomcat7/webapps/
-		
-======================================================================================================
-		
-Scenario-2: Call one yml file from other yml file. 
+	---
+	- import_playbook: other_file.yml
+
+	Note: 'include' for playbook includes. You should use 'import_playbook' instead. This feature will be removed in
+	version 2.8.
 
 ---
-- import_playbook: other_file.yml
 
-Note: 'include' for playbook includes. You should use 'import_playbook' instead. This feature will be removed in
-version 2.8.
-======================================================================================================
+#### Scenario-3: install tree
+	---
+	- hosts: amazonweb
+	  tasks:
+		- name: install tree
+		  yum: name=tree update_cache=yes state=latest
 
-Scenario-3: install tree
 ---
-- hosts: amazonweb
-  tasks:
-	- name: install tree
-	  yum: name=tree update_cache=yes state=latest
-======================================================================================================
 
-Scenario-4: copy the file from Redhat machine to cleint, and install the apache pakage.
+#### Scenario-4: copy the file from Redhat machine to cleint, and install the apache pakage.
 
-- hosts: amazonweb
-  tasks:
-    - name: install httpd
-      yum: name=httpd state=installed
-    - name: copy index.html
-      copy: src=files/index.html dest=/var/www/html/index.html
-    - name: start apache
-      service:
-       name: httpd
-       state: restarted
+	- hosts: amazonweb
+	  tasks:
+	    - name: install httpd
+	      yum: name=httpd state=installed
+	    - name: copy index.html
+	      copy: src=files/index.html dest=/var/www/html/index.html
+	    - name: start apache
+	      service:
+	       name: httpd
+	       state: restarted
 
 Once the above palybook run successfully, launch only the IP address of the cleint machine: http://13.58.52.250, it will run index.html file.
-======================================================================================================
-- hosts: ec2-13-59-32-120.us-east-2.compute.amazonaws.com
-  tasks:
-    - name: install httpd
-      action: yum name=httpd state=installed
-    - name: copy index.html
-      copy: src=files/index.html dest=/var/www/html/index.html
-    - name: start apache
-      service:
-       name: httpd
-       state: restarted
 
-	   ansible-playbook ansi_playbook2.yml
-	   ansible-playbook -v ansi_playbook2.yml
-	   ansible-playbook -v ansi_playbook2.yml --step
-	   
-	   -v = verbore for detailed execution status.
-	   --step = y/n/c (interacting with user to get the approval on next task execution.)
+---
+
+	- hosts: ec2-13-59-32-120.us-east-2.compute.amazonaws.com
+	  tasks:
+	    - name: install httpd
+	      action: yum name=httpd state=installed
+	    - name: copy index.html
+	      copy: src=files/index.html dest=/var/www/html/index.html
+	    - name: start apache
+	      service:
+	       name: httpd
+	       state: restarted
+
+		   ansible-playbook ansi_playbook2.yml
+		   ansible-playbook -v ansi_playbook2.yml
+		   ansible-playbook -v ansi_playbook2.yml --step
+
+		   -v = verbore for detailed execution status.
+		   --step = y/n/c (interacting with user to get the approval on next task execution.)
 Output:
 [root@RedhatServer playbooks]# ansible-playbook ansi_playbook2.yml
 
