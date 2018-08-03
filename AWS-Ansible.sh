@@ -169,10 +169,10 @@ hostname ClientServer
 	
 	vi ansi_playbook.yml : create yml file and add below snippet.
 
-- hosts: amazonweb
-  tasks:
-   - name: install tree
-     yum: name=tree update_cache=yes state=latest
+	- hosts: amazonweb
+	  tasks:
+	   - name: install tree
+	     yum: name=tree update_cache=yes state=latest
 
 	8.4. ansible-playbook ansi_playbook.yml.
 	
