@@ -191,7 +191,7 @@ hostname ClientServer
 
 	![image](https://user-images.githubusercontent.com/24622526/43627977-08e0d938-96e8-11e8-8fad-b134a631c5c6.png)
 	
-======================================================================================================
+======
 
 Scenario-1: Download an artifact from Nexus and depoy on TomCat.
 
