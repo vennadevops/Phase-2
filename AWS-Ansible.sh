@@ -187,6 +187,10 @@ hostname ClientServer
 		PLAY RECAP *********************************************************************
 		client                     : ok=2    changed=1    unreachable=0    failed=0
 
+	8.5. Before & After run the ansible playbook:
+
+	![image](https://user-images.githubusercontent.com/24622526/43627977-08e0d938-96e8-11e8-8fad-b134a631c5c6.png)
+	
 ======================================================================================================
 
 Scenario-1: Download an artifact from Nexus and depoy on TomCat.
