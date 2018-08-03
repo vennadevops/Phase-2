@@ -189,8 +189,8 @@ hostname ClientServer
 
 	8.5. Before & After run the ansible playbook:
 
-![image](https://user-images.githubusercontent.com/24622526/43627977-08e0d938-96e8-11e8-8fad-b134a631c5c6.png)
-	
+![image](https://user-images.githubusercontent.com/24622526/43628259-172ed08e-96e9-11e8-9152-ba2b5aeff9a6.png)
+
 ---
 
 	Scenario-1: Download an artifact from Nexus and depoy on TomCat.
