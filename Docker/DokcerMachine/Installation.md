@@ -46,7 +46,7 @@ Go to EC2 instances:
     
 ![image](https://user-images.githubusercontent.com/24622526/43895159-ddf1d836-9bc3-11e8-8e71-ee14adc928c7.png)
 
-### Connect to the AWS machines which were created by docker-machine.
+### Connect to the AWS machines/instances which are created by docker-machine.
 
 #### Using docker: docker-machine ssh aws-sandbox20
 
@@ -54,9 +54,15 @@ Go to EC2 instances:
 
 #### from local git bash:
 
+* If we need to connect to AWS instance from git bash we need .pem file private key.
+* Copy the private key of the instance from docker machine.
+* Run the below command to know where the private key stored in docker machine.
+
     docker-machine inspect aws-sandbox20
     
 ![image](https://user-images.githubusercontent.com/24622526/43895396-b703c8b4-9bc4-11e8-892b-70b05073945a.png)
+
+
 
     
     
