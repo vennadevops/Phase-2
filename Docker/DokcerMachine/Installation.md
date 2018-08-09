@@ -1,9 +1,9 @@
 
-Reference for docker-machine installation: https://docs.docker.com/machine/install-machine/#install-machine-directly
-Reference for docker machine docs: https://docs.docker.com/machine/
-Referecne for Docker with AWS example: https://docs.docker.com/machine/drivers/aws/
-Referecne for Docker with AWS example: https://stackoverflow.com/questions/45658541/docker-machine-connect-to-existing-aws-machine/46228588#46228588
-Referecne for Docker with AWS example: http://docker-k8s-lab.readthedocs.io/en/latest/docker/docker-machine-aws.html
+* Reference for docker-machine installation: https://docs.docker.com/machine/install-machine/#install-machine-directly
+* Reference for docker machine docs: https://docs.docker.com/machine/
+* Referecne for Docker with AWS example: https://docs.docker.com/machine/drivers/aws/
+* Referecne for Docker with AWS example: https://stackoverflow.com/questions/45658541/docker-machine-connect-to-existing-aws-machine/46228588#46228588
+* Referecne for Docker with AWS example: http://docker-k8s-lab.readthedocs.io/en/latest/docker/docker-machine-aws.html
 
 ### Installtion on Ubuntu:
 
