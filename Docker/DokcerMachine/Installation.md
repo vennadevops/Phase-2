@@ -13,4 +13,6 @@ Refer: https://docs.docker.com/machine/
 
 https://docs.docker.com/machine/drivers/aws/
 
+https://stackoverflow.com/questions/45658541/docker-machine-connect-to-existing-aws-machine/46228588#46228588
+
     docker-machine create --driver amazonec2 --amazonec2-access-key AKIAJHQJXNLTPDR2QXKA --amazonec2-secret-key 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 --amazonec2-open-port 8000 --amazonec2-region us-east-2 aws-sandbox
