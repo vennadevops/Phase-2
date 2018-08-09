@@ -54,14 +54,25 @@ Go to EC2 instances:
 
 #### from local git bash:
 
-* If we need to connect to AWS instance from git bash we need .pem file private key.
+* If we need to connect to AWS instance from git bash we need .pem file with private key.
 * Copy the private key of the instance from docker machine.
 * Run the below command to know where the private key stored in docker machine.
 
-    docker-machine inspect aws-sandbox20
+    docker-machine inspect aws-sandbox21
     
 ![image](https://user-images.githubusercontent.com/24622526/43895396-b703c8b4-9bc4-11e8-892b-70b05073945a.png)
 
+* Shown in above pic, private key of the instance "aws-sandbox21"  is there in the path "SSHKeyPath": "/root/.docker/machine/machines/aws-sandbox21/id_rsa"
+* cat /root/.docker/machine/machines/aws-sandbox21/id_rsa
+* Copy the private key and paste it in your notepad and save the file with the name "aws-sandbox21.pem".
+* Go to AWS EC2 instances --> Select the instacne "aws-sandbox21" --> Connect --> Copy the SSH command.
+
+![image](https://user-images.githubusercontent.com/24622526/43895860-352353e4-9bc6-11e8-8298-b26a759c86a3.png)
+
+* Open git bash terminal, paste the command.
+* Connect to your instance.
+
+![image](https://user-images.githubusercontent.com/24622526/43895919-7c8f84dc-9bc6-11e8-8715-8d46902e3a1d.png)
 
 
     
