@@ -81,5 +81,9 @@ Go to EC2 instances:
 ![image](https://user-images.githubusercontent.com/24622526/43895919-7c8f84dc-9bc6-11e8-8715-8d46902e3a1d.png)
 
 
+### Cretae AWS EC2 instance using VPC
+
+    docker-machine create --driver amazonec2 --amazonec2-access-key AKIA******* --amazonec2-secret-key 2ORa7Qv***************Dt3jEAe --amazonec2-vpc-id vpc-fsdff4335rrwg43w --amazonec2-subnet-id subnet-daf42f432f54g6y6h6h --amazonec2-region us-east-2 aws-sandbox-ubuntu
     
+
     
