@@ -17,6 +17,8 @@
 
 #### Follow the below steps.
 
+* Note: In this practice, better if you create VPC/Subnet to secure your virtual machines before you create IAM user. If you create IAM user without VPC, remove the IAM user & change your AWS account password immidiately, otherwise your EC2 service will be locked for some hours.
+
 * Creare IAM in AWS.  Refer: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html#create-an-iam-user
     * Services --> Security, Identity & Compliance --> IAM --> Users --> Add User.
     * Provide Username.
