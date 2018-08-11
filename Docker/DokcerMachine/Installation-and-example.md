@@ -5,6 +5,10 @@
 * Referecne for Docker with AWS example: https://stackoverflow.com/questions/45658541/docker-machine-connect-to-existing-aws-machine/46228588#46228588
 * Referecne for Docker with AWS example: http://docker-k8s-lab.readthedocs.io/en/latest/docker/docker-machine-aws.html
 
+### Install docker on Ubuntu.
+
+[Dokcer-Installation-Ubuntu](https://github.com/DevOpsBasicSetup/Phase-2/blob/master/Docker/DockerEngine/2.1.Dokcer-Installation-Ubuntu.md)
+
 ### Install docker-machine on Ubuntu:
 
     base=https://github.com/docker/machine/releases/download/v0.14.0 &&
