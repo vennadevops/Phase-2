@@ -5,6 +5,8 @@
 
 # Launch an AWS Ubuntu machine and login as route user.
 
+	apt install juju-2.0
+
 # 1. Add the cloud & credentials
 
   * Command: juju add-credential aws
