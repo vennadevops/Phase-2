@@ -172,3 +172,75 @@ Reference: https://kubernetes.io/docs/getting-started-guides/ubuntu/installation
 
 ![image](https://user-images.githubusercontent.com/24622526/44193680-32064880-a123-11e8-875a-dc13cfc362a5.png)
 
+
+# 11. Use the juju switch command to get the current controller name:
+
+	root@ip-172-31-2-89:~# juju switch
+
+	aws-us-east-2:admin/default
+	
+# Shutdown all the machines
+
+# 12. Run the below command, this will shutdown and terminate all running instances on that cloud
+
+* command: juju destroy-controller aws-us-east-2 --destroy-all-models
+
+	root@ip-172-31-2-89:~# juju destroy-controller aws-us-east-2 --destroy-all-models
+	WARNING! This command will destroy the "aws-us-east-2" controller.
+	This includes all machines, applications, data and other resources.
+
+	Continue? (y/N):y
+	Destroying controller
+	Waiting for hosted model resources to be reclaimed
+	Waiting on 1 model, 15 machines, 6 applications
+	Waiting on 1 model, 15 machines, 6 applications
+	Waiting on 1 model, 15 machines, 6 applications
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 15 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 13 machines
+	Waiting on 1 model, 4 machines
+	All hosted models reclaimed, cleaning up controller machines
+
+	
+![image](https://user-images.githubusercontent.com/24622526/44194857-cc1bc000-a126-11e8-88c7-d803213b385d.png)
