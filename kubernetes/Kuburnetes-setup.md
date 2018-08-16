@@ -1,5 +1,7 @@
 
-Reference: https://kubernetes.io/docs/getting-started-guides/ubuntu/installation/
+* Reference: https://kubernetes.io/docs/getting-started-guides/ubuntu/installation/
+
+* Reference: https://kubernetes.io/docs/tasks/access-application-cluster/service-access-application-cluster/#objectives
 
 # Launch an AWS Ubuntu machine and login as route user.
 
