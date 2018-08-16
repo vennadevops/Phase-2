@@ -122,5 +122,51 @@ Reference: https://kubernetes.io/docs/getting-started-guides/ubuntu/installation
 
 ![image](https://user-images.githubusercontent.com/24622526/44193393-2d8d6000-a122-11e8-8515-541f9dcf80f8.png)
 
+# Monitoring:
+
+* command: juju status (Or) watch -c juju status --color
+	
+	Model    Controller     Cloud/Region   Version  SLA          Timestamp
+	default  aws-us-east-2  aws/us-east-2  2.4.0    unsupported  07:04:56Z
+
+	App                    Version  Status   Scale  Charm                  Store       Rev  OS      Notes
+	easyrsa                3.0.1    active       1  easyrsa                jujucharms   50  ubuntu
+	etcd                   3.2.9    waiting    2/3  etcd                   jujucharms   96  ubuntu
+	flannel                0.10.0   active       3  flannel                jujucharms   66  ubuntu
+	kubeapi-load-balancer  1.10.3   active       1  kubeapi-load-balancer  jujucharms   69  ubuntu  exposed
+	kubernetes-master      1.11.2   waiting    1/2  kubernetes-master      jujucharms  122  ubuntu
+	kubernetes-worker      1.11.2   waiting    2/3  kubernetes-worker      jujucharms  138  ubuntu  exposed
+
+	Unit                      Workload  Agent       Machine  Public address  Ports           Message
+	easyrsa/0*                active    idle        0        18.218.121.172                  Certificate Authority connected.
+	etcd/0*                   active    idle        1        18.222.163.211  2379/tcp        Healthy with 2 known peers
+	etcd/1                    active    idle        2        18.216.242.90   2379/tcp        Healthy with 2 known peers
+	etcd/2                    waiting   allocating  3                                        waiting for machine
+	kubeapi-load-balancer/0*  active    idle        4        18.191.12.26    443/tcp         Loadbalancer ready.
+	kubernetes-master/0       waiting   allocating  5                                        waiting for machine
+	kubernetes-master/1*      active    idle        6        18.222.179.121  6443/tcp        Kubernetes master running.
+	  flannel/0*              active    idle                 18.222.179.121                  Flannel subnet 10.1.90.1/24
+	kubernetes-worker/0*      active    idle        7        13.59.123.100   80/tcp,443/tcp  Kubernetes worker running.
+	  flannel/1               active    idle                 13.59.123.100                   Flannel subnet 10.1.69.1/24
+	kubernetes-worker/1       waiting   allocating  8                                        waiting for machine
+	kubernetes-worker/2       active    idle        9        18.220.122.157  80/tcp,443/tcp  Kubernetes worker running.
+	  flannel/2               active    idle                 18.220.122.157                  Flannel subnet 10.1.17.1/24
+
+	Entity  Meter status  Message
+	model   amber         user verification pending
+
+	Machine  State    DNS             Inst id              Series  AZ          Message
+	0        started  18.218.121.172  i-09547ce0be8b43832  xenial  us-east-2a  running
+	1        started  18.222.163.211  i-0f09a38394d4ec769  xenial  us-east-2a  running
+	2        started  18.216.242.90   i-0397f6f6131343f8d  xenial  us-east-2b  running
+	3        down                     pending              xenial              cannot run instances: You have requested more instances (6) than your current instance limit of 5 allows for the specified instance type. Please visit http://aws.amazon.com/contact-us/ec2-request to request an adjustment to this limit. (InstanceLimitExceeded)
+	4        started  18.191.12.26    i-0e43d09505af4cb65  xenial  us-east-2c  running
+	5        down                     pending              xenial              cannot run instances: You have requested more instances (6) than your current instance limit of 5 allows for the specified instance type. Please visit http://aws.amazon.com/contact-us/ec2-request to request an adjustment to this limit. (InstanceLimitExceeded)
+	6        started  18.222.179.121  i-073581c733040a14f  xenial  us-east-2a  running
+	7        started  13.59.123.100   i-00c81b8bb296e9e50  xenial  us-east-2a  running
+	8        down                     pending              xenial              cannot run instances: You have requested more instances (3) than your current instance limit of 2 allows for the specified instance type. Please visit http://aws.amazon.com/contact-us/ec2-request to request an adjustment to this limit. (InstanceLimitExceeded)
+	9        started  18.220.122.157  i-03913cc1b3aa9b0f7  xenial  us-east-2b  running
+
+
 ![image](https://user-images.githubusercontent.com/24622526/44193680-32064880-a123-11e8-875a-dc13cfc362a5.png)
 
