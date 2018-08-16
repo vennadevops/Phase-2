@@ -23,7 +23,7 @@
 
         Credential "my_aws_creds" added locally for cloud "aws".
 
-#2. Create an instance on AWS EC2. A new instance will be created in AWS with the instance name 'juju-controller-machine-0' and machine type t2.medium.
+# 2. Create an instance on AWS EC2. A new instance will be created in AWS with the instance name 'juju-controller-machine-0' and machine type t2.medium.
 
 	* Command: juju bootstrap aws/us-east-2
 	
@@ -124,7 +124,7 @@
 
 ![image](https://user-images.githubusercontent.com/24622526/44193393-2d8d6000-a122-11e8-8515-541f9dcf80f8.png)
 
-# Monitoring:
+# 4. Monitoring:
 
 * command: juju status (Or) watch -c juju status --color
 	
@@ -173,6 +173,55 @@
 
 
 ![image](https://user-images.githubusercontent.com/24622526/44193680-32064880-a123-11e8-875a-dc13cfc362a5.png)
+
+# 5. mkdir -p ~/.kube
+
+# 6. juju scp kubernetes-master/0:/home/ubuntu/config ~/.kube/config 
+
+	If there is any error : ERROR no available address(es)
+
+	or check the julu status and give the active kubernetes-master 
+	
+	
+	juju scp kubernetes-master/1:/home/ubuntu/config ~/.kube/config
+
+	No output
+	
+# 7. Installing kubectl on ubuntu machine.
+
+	sudo snap install kubectl --classic
+	
+	# Output: kubectl 1.11.2 from 'canonical' installed
+
+# 8. Health Check
+
+* Command: kubectl cluster-info
+	
+		Output:
+
+		Kubernetes master is running at https://18.191.12.26:443
+		Heapster is running at https://18.191.12.26:443/api/v1/namespaces/kube-system/services/heapster/proxy
+		KubeDNS is running at https://18.191.12.26:443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+		kubernetes-dashboard is running at https://18.191.12.26:443/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy
+		Metrics-server is running at https://18.191.12.26:443/api/v1/namespaces/kube-system/services/https:metrics-server:/proxy
+		Grafana is running at https://18.191.12.26:443/api/v1/namespaces/kube-system/services/monitoring-grafana/proxy
+		InfluxDB is running at https://18.191.12.26:443/api/v1/namespaces/kube-system/services/monitoring-influxdb:http/proxy
+
+		To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+
+# 9. Scale up cluster: https://jujucharms.com/docs/2.3/charms-constraints
+
+# 10. Scale out cluster:
+
+	juju add-unit kubernetes-worker
+	
+	Or 
+	
+	juju add-unit -n3 kubernetes-worker
+
+	# Reference : https://jujucharms.com/docs/stable/reference-constraints
+	
+![image](https://user-images.githubusercontent.com/24622526/44199437-a77a1500-a133-11e8-8b05-c2b61ebbe47e.png)
 
 
 # 11. Use the juju switch command to get the current controller name:
