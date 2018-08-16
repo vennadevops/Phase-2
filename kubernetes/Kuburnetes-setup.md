@@ -244,3 +244,6 @@ Reference: https://kubernetes.io/docs/getting-started-guides/ubuntu/installation
 
 	
 ![image](https://user-images.githubusercontent.com/24622526/44194857-cc1bc000-a126-11e8-88c7-d803213b385d.png)
+
+![image](https://user-images.githubusercontent.com/24622526/44195040-67ad3080-a127-11e8-9cf1-15b237c3e12f.png)
+
