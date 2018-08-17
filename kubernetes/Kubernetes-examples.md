@@ -18,6 +18,8 @@
 
 * https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/kube-router-network-policy/#before-you-begin
 
+* https://github.com/cloudnativelabs/kube-router/blob/master/docs/kubeadm.md
+
 * https://www.digitalocean.com/community/tutorials/how-to-create-a-kubernetes-1-10-cluster-using-kubeadm-on-ubuntu-16-04
 
 * kubectl describe pod `<podName>` | grep IP | awk '{print $2}'
