@@ -2,3 +2,7 @@
 
 * Reference: https://www.cloudtechnologyexperts.com/kubeadm-on-aws/
 
+* https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+
+* kubectl describe pod `<podName>` | grep IP | awk '{print $2}'
+
