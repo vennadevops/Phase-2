@@ -36,6 +36,8 @@ kubectl run devopswebapp --image=docker pull venkatasykam/devopswebapp:latest --
 
 kubectl expose deployment nginx-deployment --type=LoadBalancer --port 80 --target-port 8080
 
+https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-interactive/
+
 
 
 kubectl exec my-nginx-59497d7745-rcx2p -- printenv | grep SERVICE
