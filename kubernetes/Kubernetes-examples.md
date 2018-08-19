@@ -57,3 +57,24 @@ https://kubernetes.io/docs/tasks/federation/federation-service-discovery/
 
 https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
 
+
+------------------------
+
+
+kubectl create deployment nginx --image=nginx
+
+kubectl create service nodeport nginx --tcp=80:80
+
+kubectl get deployments
+
+kubectl get svc
+
+curl http://18.188.5.186:31987
+
+![image](https://user-images.githubusercontent.com/24622526/44305576-41c39e00-a36a-11e8-96e4-04ca84e153a4.png)
+
+http://18.188.5.186:31987
+
+![image](https://user-images.githubusercontent.com/24622526/44305579-5bfd7c00-a36a-11e8-9cb7-22b0a19a88ca.png)
+
+
