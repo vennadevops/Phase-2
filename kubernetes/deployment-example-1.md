@@ -2,11 +2,11 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 * Once the master and nodes are available run the below commands one by one and try to understand what is happening:
 
-* Command: kubectl get nodes >>>> Check whether the nodes are ready or not.
+* **Command**: kubectl get nodes >>>> Check whether the nodes are ready or not.
 
 ![image](https://user-images.githubusercontent.com/24622526/44387273-986cdb80-a514-11e8-9137-3fc57f55858a.png)
 
-* Command: kubectl get pods or kubectl get pod >>> check is there any pod available on the nodes.
+* **Command**: kubectl get pods or kubectl get pod >>> check is there any pod available on the nodes.
 
 ## Step-1. Creating a Deployment:
 
@@ -18,23 +18,24 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 ![image](https://user-images.githubusercontent.com/24622526/44384307-4d9a9600-a50b-11e8-8db7-bb9044001179.png)
 
-* command: kubectl get deployments (or) kubectl get deploy
+* **command**: kubectl get deployments (or) kubectl get deploy
 	
 ![image](https://user-images.githubusercontent.com/24622526/44384444-bb46c200-a50b-11e8-8176-bea54248a04d.png)
 
 * deployment info: 
 
 	* describe all the deployments: kubectl describe deploy
-	* describe a deployment: kubectl describe deploy nginx-deployment
+	* describe a single deployment: kubectl describe deploy nginx-deployment
 
 ![image](https://user-images.githubusercontent.com/24622526/44387015-cbfb3600-a513-11e8-9be6-f2a250127d27.png)
 
-* All nodess: kubectl get nodes
+* **All nodess**: kubectl get nodes
 
-* describe nodes: 
+* **describe nodes**: 
 
-	* decribe all the nodes: kubectl describe nodes
-	* describe a single node: kubectl describe nodes "node-name"  (we can find an info what are all the pods are running in each node)
+	* **decribe all the nodes**: kubectl describe nodes
+	* **describe a single node**: kubectl describe nodes "node-name"  (we can find an info what are all the pods are running in each node)
+	
 
 			root@k-master:~# kubectl get nodes
 			NAME       STATUS    ROLES     AGE       VERSION
@@ -115,32 +116,32 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 			  Normal  NodeReady                22m                kubelet, k-node-1     Node k-node-1 status is now: NodeReady
 			root@k-master:~#
 
-* All pods: kubectl get pods
+* **All pods**: kubectl get pods
 
 ![image](https://user-images.githubusercontent.com/24622526/44387420-01545380-a515-11e8-9a6f-f839a217f148.png)
 
-* describe pods: 
+* **describe pods**: 
 
-	* describe all the pods: kubectl describe pods
-	* describe a single pod: kubectl describe pods/pod-name  (we can find an info related on which ndoe this pod is running)
+	* **describe all the pods**: kubectl describe pods
+	* **describe a single pod**: kubectl describe pods/pod-name  (we can find an info related on which ndoe this pod is running)
 
 ![image](https://user-images.githubusercontent.com/24622526/44387618-87709a00-a515-11e8-855c-bfd9b37e5724.png)
 
 #### When you inspect the Deployments in your cluster, the following fields are displayed:
 
-* command: kubectl get deployments or kubectl get deploy
+* **command**: kubectl get deployments or kubectl get deploy
 
 ![image](https://user-images.githubusercontent.com/24622526/44384444-bb46c200-a50b-11e8-8176-bea54248a04d.png)
 
 
-* NAME lists the names of the Deployments in the cluster.
-* DESIRED displays the desired number of replicas of the application, which you define when you create the Deployment. This is the desired state.
-* CURRENT displays how many replicas are currently running.
-* UP-TO-DATE displays the number of replicas that have been updated to achieve the desired state.
-* AVAILABLE displays how many replicas of the application are available to your users.
-* AGE displays the amount of time that the application has been running.
+* ***NAME*** lists the names of the Deployments in the cluster.
+* ***DESIRED*** displays the desired number of replicas of the application, which you define when you create the Deployment. This is the desired state.
+* ***CURRENT*** displays how many replicas are currently running.
+* ***UP-TO-DATE*** displays the number of replicas that have been updated to achieve the desired state.
+* ***AVAILABLE*** displays how many replicas of the application are available to your users.
+* ***AGE*** displays the amount of time that the application has been running.
 
-* Check the statu of deployment: kubectl rollout status deployment/nginx-deployment (or) kubectl rollout status deploy/nginx-deployment
+* **Check the statu of deployment**: kubectl rollout status deployment/nginx-deployment (or) kubectl rollout status deploy/nginx-deployment
 
 ![image](https://user-images.githubusercontent.com/24622526/44384682-85560d80-a50c-11e8-89a6-3610b17aa320.png)
 
@@ -160,11 +161,11 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 * Suppose that you now want to update the nginx Pods to use the nginx:1.9.1 image instead of the nginx:1.7.9 image.
 
-* Command: kubectl set image deployment/nginx-deployment nginx=nginx:1.9.1
+* **Command**: kubectl set image deployment/nginx-deployment nginx=nginx:1.9.1
 
 ![image](https://user-images.githubusercontent.com/24622526/44388814-9efd5200-a518-11e8-98dd-400de3f25335.png)
 
-* command(you can edit the deployment with right image tag version): kubectl edit deployment/nginx-deployment 
+* **command**(you can edit the deployment with right image tag version): kubectl edit deployment/nginx-deployment 
 	* Once you run this command, deployment file will be opened, you can edit the image version here and save the file.
 	
 ![image](https://user-images.githubusercontent.com/24622526/44388940-03201600-a519-11e8-83c7-062b958c69be.png)
@@ -173,7 +174,7 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 ![image](https://user-images.githubusercontent.com/24622526/44389075-67db7080-a519-11e8-94ad-bb30c9132faf.png)
 
-* Run the below commands: the Deployment updated the Pods by creating a new ReplicaSet and scaling it up to 3 replicas, as well as scaling down the old ReplicaSet to 0 replicas.
+* Run the below **commands**: the Deployment updated the Pods by creating a new ReplicaSet and scaling it up to 3 replicas, as well as scaling down the old ReplicaSet to 0 replicas.
 
 	* kubectl get deploy
 	* kubectl get rs
