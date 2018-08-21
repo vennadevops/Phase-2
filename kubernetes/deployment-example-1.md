@@ -1,6 +1,6 @@
 Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
-* Once the master and nodes are available run the below commands one by one and try to understand:
+* Once the master and nodes are available run the below commands one by one and try to understand what is happening:
 
 * Command: kubectl get nodes >>>> Check whether the nodes are ready or not.
 
