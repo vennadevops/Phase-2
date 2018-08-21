@@ -173,6 +173,12 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 ![image](https://user-images.githubusercontent.com/24622526/44389075-67db7080-a519-11e8-94ad-bb30c9132faf.png)
 
-* commands : kubectl get deploy & then kubectl get rs
+* Run the below commands: the Deployment updated the Pods by creating a new ReplicaSet and scaling it up to 3 replicas, as well as scaling down the old ReplicaSet to 0 replicas.
 
-![image](https://user-images.githubusercontent.com/24622526/44389118-8b9eb680-a519-11e8-8173-21ed34ee9a43.png)
+	* kubectl get deploy
+	* kubectl get rs
+	* kubectl get pods
+	
+![image](https://user-images.githubusercontent.com/24622526/44389302-fd770000-a519-11e8-895d-a37e943ee7fa.png)
+
+
