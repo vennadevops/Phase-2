@@ -29,23 +29,12 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 ![image](https://user-images.githubusercontent.com/24622526/44387015-cbfb3600-a513-11e8-9be6-f2a250127d27.png)
 
-* All pods: kubectl get pods
-
-![image](https://user-images.githubusercontent.com/24622526/44387420-01545380-a515-11e8-9a6f-f839a217f148.png)
-
-* describe pods: 
-
-	* describe all the pods: kubectl describe pods
-	* describe a single pod: kubectl describe pods/<pod-name>  (we can find an info related on which ndoe this pod is running)
-
-![image](https://user-images.githubusercontent.com/24622526/44387618-87709a00-a515-11e8-855c-bfd9b37e5724.png)
-
 * All nodess: kubectl get nodes
 
 * describe nodes: 
 
 	* decribe all the nodes: kubectl describe nodes
-	* describe a single node: kubectl describe nodes <node-name>  (we can find an info what are all the pods are running in each node)
+	* describe a single node: kubectl describe nodes "node-name"  (we can find an info what are all the pods are running in each node)
 
 			root@k-master:~# kubectl get nodes
 			NAME       STATUS    ROLES     AGE       VERSION
@@ -125,6 +114,17 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 			  Normal  Starting                 23m                kube-proxy, k-node-1  Starting kube-proxy.
 			  Normal  NodeReady                22m                kubelet, k-node-1     Node k-node-1 status is now: NodeReady
 			root@k-master:~#
+
+* All pods: kubectl get pods
+
+![image](https://user-images.githubusercontent.com/24622526/44387420-01545380-a515-11e8-9a6f-f839a217f148.png)
+
+* describe pods: 
+
+	* describe all the pods: kubectl describe pods
+	* describe a single pod: kubectl describe pods/pod-name  (we can find an info related on which ndoe this pod is running)
+
+![image](https://user-images.githubusercontent.com/24622526/44387618-87709a00-a515-11e8-855c-bfd9b37e5724.png)
 
 #### When you inspect the Deployments in your cluster, the following fields are displayed:
 
