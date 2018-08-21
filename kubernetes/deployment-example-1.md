@@ -2,7 +2,7 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 * Once the master and nodes are available run the below commands one by one and try to understand:
 
-* Command: kubectl get nodes >>>> Check whether the node is read or not.
+* Command: kubectl get nodes >>>> Check whether the node is ready or not.
 
 ![image](https://user-images.githubusercontent.com/24622526/44387273-986cdb80-a514-11e8-9137-3fc57f55858a.png)
 
