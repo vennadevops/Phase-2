@@ -18,11 +18,14 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 ![image](https://user-images.githubusercontent.com/24622526/44384307-4d9a9600-a50b-11e8-8db7-bb9044001179.png)
 
-* command: kubectl get deployments or kubectl get deploy
+* command: kubectl get deployments (or) kubectl get deploy
 	
 ![image](https://user-images.githubusercontent.com/24622526/44384444-bb46c200-a50b-11e8-8176-bea54248a04d.png)
 
-* deployment info: kubectl describe deploy or kubectl describe deploy nginx-deployment
+* deployment info: 
+
+	* describe all the deployments: kubectl describe deploy
+	* describe a deployment: kubectl describe deploy nginx-deployment
 
 ![image](https://user-images.githubusercontent.com/24622526/44387015-cbfb3600-a513-11e8-9be6-f2a250127d27.png)
 
@@ -30,13 +33,19 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 ![image](https://user-images.githubusercontent.com/24622526/44387420-01545380-a515-11e8-9a6f-f839a217f148.png)
 
-* describe pods: kubectl describe pods/<pod-name>  (we can find an info related on which ndoe this pod is running)
+* describe pods: 
+
+	* describe all the pods: kubectl describe pods
+	* describe a single pod: kubectl describe pods/<pod-name>  (we can find an info related on which ndoe this pod is running)
 
 ![image](https://user-images.githubusercontent.com/24622526/44387618-87709a00-a515-11e8-855c-bfd9b37e5724.png)
 
 * All nodess: kubectl get nodes
 
-* describe nodes: kubectl describe nodes <node-name>  (we can find an info what are all the pods are running in each node)
+* describe nodes: 
+
+	* decribe all the nodes: kubectl describe nodes
+	* describe a single node: kubectl describe nodes <node-name>  (we can find an info what are all the pods are running in each node)
 
 		root@k-master:~# kubectl get nodes
 		NAME       STATUS    ROLES     AGE       VERSION
