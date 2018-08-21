@@ -4,6 +4,8 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 * **Command**: kubectl get nodes >>>> Check whether the nodes are ready or not.
 
+**picture-1**
+
 ![image](https://user-images.githubusercontent.com/24622526/44387273-986cdb80-a514-11e8-9137-3fc57f55858a.png)
 
 * **Command**: kubectl get pods or kubectl get pod >>> check is there any pod available on the nodes.
@@ -16,9 +18,13 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 * Result of the recently executed 3 commands.
 
+**picture-2**
+
 ![image](https://user-images.githubusercontent.com/24622526/44384307-4d9a9600-a50b-11e8-8db7-bb9044001179.png)
 
 * **command**: kubectl get deployments (or) kubectl get deploy
+	
+**picture-3**
 	
 ![image](https://user-images.githubusercontent.com/24622526/44384444-bb46c200-a50b-11e8-8176-bea54248a04d.png)
 
@@ -26,6 +32,8 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 	* describe all the deployments: kubectl describe deploy
 	* describe a single deployment: kubectl describe deploy nginx-deployment
+
+**picture-4**
 
 ![image](https://user-images.githubusercontent.com/24622526/44387015-cbfb3600-a513-11e8-9be6-f2a250127d27.png)
 
@@ -118,18 +126,25 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 * **All pods**: kubectl get pods
 
+**picture-5**
+
 ![image](https://user-images.githubusercontent.com/24622526/44387420-01545380-a515-11e8-9a6f-f839a217f148.png)
 
 * **describe pods**: 
 
 	* **describe all the pods**: kubectl describe pods
-	* **describe a single pod**: kubectl describe pods/pod-name  (we can find an info related on which ndoe this pod is running)
+	* **describe a single pod**: kubectl describe pods/pod-name  (we can find an info related on which node this pod is running)
+
+**picture-6**
 
 ![image](https://user-images.githubusercontent.com/24622526/44387618-87709a00-a515-11e8-855c-bfd9b37e5724.png)
+
 
 #### When you inspect the Deployments in your cluster, the following fields are displayed:
 
 * **command**: kubectl get deployments or kubectl get deploy
+
+**picture-7**
 
 ![image](https://user-images.githubusercontent.com/24622526/44384444-bb46c200-a50b-11e8-8176-bea54248a04d.png)
 
@@ -143,15 +158,21 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 * **Check the statu of deployment**: kubectl rollout status deployment/nginx-deployment (or) kubectl rollout status deploy/nginx-deployment
 
+**picture-8**
+
 ![image](https://user-images.githubusercontent.com/24622526/44384682-85560d80-a50c-11e8-89a6-3610b17aa320.png)
 
 * To see the ReplicaSet (rs) created by the deployment, run the command: kubectl get rs:
+
+**picture-9**
 
 ![image](https://user-images.githubusercontent.com/24622526/44384751-bcc4ba00-a50c-11e8-81c8-30ed320f9aaf.png)
 
 * Notice that the name of the ReplicaSet is always formatted as [DEPLOYMENT-NAME]-[POD-TEMPLATE-HASH-VALUE]. The hash value is automatically generated when the Deployment is created.
 
 * To see the labels automatically generated for each pod, run the command "kubectl get pods --show-labels". The following output is returned:
+
+**picture-10**
 
 ![image](https://user-images.githubusercontent.com/24622526/44384844-10370800-a50d-11e8-9cd5-8382b17684c9.png)
 
@@ -163,14 +184,20 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 * **Command**: kubectl set image deployment/nginx-deployment nginx=nginx:1.9.1
 
+**picture-11**
+
 ![image](https://user-images.githubusercontent.com/24622526/44388814-9efd5200-a518-11e8-98dd-400de3f25335.png)
 
 * **command**(you can edit the deployment with right image tag version): kubectl edit deployment/nginx-deployment 
 	* Once you run this command, deployment file will be opened, you can edit the image version here and save the file.
 	
+**picture-12**
+
 ![image](https://user-images.githubusercontent.com/24622526/44388940-03201600-a519-11e8-83c7-062b958c69be.png)
 
 * see the rollout status, run: kubectl rollout status deployment/nginx-deployment
+
+**picture-13**
 
 ![image](https://user-images.githubusercontent.com/24622526/44389075-67db7080-a519-11e8-94ad-bb30c9132faf.png)
 
@@ -180,6 +207,34 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 	* kubectl get rs
 	* kubectl get pods
 	
+**picture-14**
+
 ![image](https://user-images.githubusercontent.com/24622526/44389302-fd770000-a519-11e8-895d-a37e943ee7fa.png)
+
+* As per the below **picture-15**, one of the pod is rinning on ***k-node-2***. I am going to stop ***k-node-2*** instance in AWS. See **picture-16**, to **picture-20**.
+
+ **picture-15** - Pod is running on ***k-node-2***.
+ 
+ ![image](https://user-images.githubusercontent.com/24622526/44393944-7f205b00-a525-11e8-9131-6636d1cead50.png)
+
+**picture-16** - Stopped an instance ***k-node-2***.
+
+![image](https://user-images.githubusercontent.com/24622526/44394267-5187e180-a526-11e8-8d65-d82e3a357a5e.png)
+
+**picture-17** - before & after stopped the nodes list in the cluster, and status of ***k-node-2*** is **NotReady**.
+
+![image](https://user-images.githubusercontent.com/24622526/44394387-9ca1f480-a526-11e8-89eb-ea51e8813a1a.png)
+
+**picture-18** (below image)- Automatically the new nodes(new containers with new lables) are creating and assiggning to other active node. See the **picture-19** to know the status of old nodes. See the **picture-20** where exactly the new pods are nunning. 
+
+![image](https://user-images.githubusercontent.com/24622526/44394516-ea1e6180-a526-11e8-959b-deee4114fe75.png)
+
+**picture-19** - the status of old nodes are terminating, reason is *NodeLost*.
+
+![image](https://user-images.githubusercontent.com/24622526/44394571-133ef200-a527-11e8-9413-7347fb801de6.png)
+
+**picture-20**
+
+![image](https://user-images.githubusercontent.com/24622526/44394663-4c776200-a527-11e8-9e58-8d524b61d159.png)
 
 
