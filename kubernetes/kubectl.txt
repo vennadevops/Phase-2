@@ -104,4 +104,29 @@ Deployment Status:
 		
 		
 		If you run this command, output will be in yaml format: kubectl get deployment nginx-deployment -o yaml
+		
+9. Describe the serrvice: 
+
+	 kubectl describe service devopsweb
+	 
+		root@k-master:~# kubectl describe service devopsweb
+		Name:                     devopsweb
+		Namespace:                default
+		Labels:                   app=devopsweb
+		Annotations:              <none>
+		Selector:                 app=devopsweb
+		Type:                     NodePort
+		IP:                       10.110.125.147
+		Port:                     8080-8080  8080/TCP
+		TargetPort:               8080/TCP
+		NodePort:                 8080-8080  30795/TCP
+		Endpoints:                10.36.0.5:8080
+		Session Affinity:         None
+		External Traffic Policy:  Cluster
+		Events:                   <none>
+		
+10. Delete the service.
+
+	kubectl delete service devopsweb	
+
 	
