@@ -119,6 +119,11 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 #### When you inspect the Deployments in your cluster, the following fields are displayed:
 
+* command: kubectl get deployments or kubectl get deploy
+
+![image](https://user-images.githubusercontent.com/24622526/44384444-bb46c200-a50b-11e8-8176-bea54248a04d.png)
+
+
 * NAME lists the names of the Deployments in the cluster.
 * DESIRED displays the desired number of replicas of the application, which you define when you create the Deployment. This is the desired state.
 * CURRENT displays how many replicas are currently running.
