@@ -162,4 +162,17 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 * Command: kubectl set image deployment/nginx-deployment nginx=nginx:1.9.1
 
+![image](https://user-images.githubusercontent.com/24622526/44388814-9efd5200-a518-11e8-98dd-400de3f25335.png)
 
+* command(you can edit the deployment with right image tag version): kubectl edit deployment/nginx-deployment 
+	* Once you run this command, deployment file will be opened, you can edit the image version here and save the file.
+	
+![image](https://user-images.githubusercontent.com/24622526/44388940-03201600-a519-11e8-83c7-062b958c69be.png)
+
+* see the rollout status, run: kubectl rollout status deployment/nginx-deployment
+
+![image](https://user-images.githubusercontent.com/24622526/44389075-67db7080-a519-11e8-94ad-bb30c9132faf.png)
+
+* commands : kubectl get deploy & then kubectl get rs
+
+![image](https://user-images.githubusercontent.com/24622526/44389118-8b9eb680-a519-11e8-8173-21ed34ee9a43.png)
