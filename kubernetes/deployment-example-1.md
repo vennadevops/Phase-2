@@ -33,4 +33,18 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 * AVAILABLE displays how many replicas of the application are available to your users.
 * AGE displays the amount of time that the application has been running.
 
+* Check the statu of deployment: kubectl rollout status deployment/nginx-deployment
 
+![image](https://user-images.githubusercontent.com/24622526/44384682-85560d80-a50c-11e8-89a6-3610b17aa320.png)
+
+* To see the ReplicaSet (rs) created by the deployment, run the command: kubectl get rs:
+
+![image](https://user-images.githubusercontent.com/24622526/44384751-bcc4ba00-a50c-11e8-81c8-30ed320f9aaf.png)
+
+* Notice that the name of the ReplicaSet is always formatted as [DEPLOYMENT-NAME]-[POD-TEMPLATE-HASH-VALUE]. The hash value is automatically generated when the Deployment is created.
+
+* To see the labels automatically generated for each pod, run the command "kubectl get pods --show-labels". The following output is returned:
+
+![image](https://user-images.githubusercontent.com/24622526/44384844-10370800-a50d-11e8-9cd5-8382b17684c9.png)
+
+* The created ReplicaSet ensures that there are three nginx Pods running at all times.
