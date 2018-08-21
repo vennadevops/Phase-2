@@ -229,12 +229,20 @@ Reference: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 ![image](https://user-images.githubusercontent.com/24622526/44394516-ea1e6180-a526-11e8-959b-deee4114fe75.png)
 
-**picture-19** - the status of old nodes are terminating, reason is *NodeLost*.
+**picture-19** - Old nodes are terminating, reason is *NodeLost*.
 
 ![image](https://user-images.githubusercontent.com/24622526/44394571-133ef200-a527-11e8-9413-7347fb801de6.png)
 
-**picture-20**
+![image](https://user-images.githubusercontent.com/24622526/44395193-a9274c80-a528-11e8-9666-07fd026afb5d.png)
+
+**picture-20** - new nodes are automatically created in **k-node-1**
 
 ![image](https://user-images.githubusercontent.com/24622526/44394663-4c776200-a527-11e8-9e58-8d524b61d159.png)
+
+**picture-21** - after sometime
+
+![image](https://user-images.githubusercontent.com/24622526/44395243-ccea9280-a528-11e8-9e54-c8a245268b59.png)
+
+
 
 
