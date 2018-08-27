@@ -34,4 +34,10 @@
 
 * docker-machine ssh machine-name
 
+---
+
+Uninstall docker-machine from our machine
+
+* rm $(which docker-machine)
+
 
