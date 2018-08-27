@@ -14,10 +14,12 @@
 
 * docker-machine restart machine-name
 
+* docker-machine kill machine-name
+
 * docker-machine env machine-name
 
 * docker-machine config machine-name
 
 * docker-machine inspect machine-name
 
-* docker-machine inspect machine-name
+
