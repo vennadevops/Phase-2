@@ -22,6 +22,8 @@
 
 * docker-machine rm machine-name
 
+* docker-machine rm -f $(docker-machine ls -q)
+
 * docker-machine env machine-name
 
 * docker-machine config machine-name
