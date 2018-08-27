@@ -2,6 +2,10 @@
 
 * docker-machine --help
 
+* docker-machine create --help
+
+* docker-machine create --driver amazonec2 --help
+
 * docker-machine ls
 
 * docker-machine active
