@@ -6,7 +6,7 @@
 
   [Dokcer-Machine-Installation-Ubuntu](https://github.com/DevOpsBasicSetup/Phase-2/blob/master/Docker/DokcerMachine/Installation-and-example.md)
 
-* Crete 3 docker hosts using docker-machine.
+##### 2.1. Create 3 docker hosts using docker-machine.
   
       docker-machine create --driver amazonec2 --amazonec2-access-key AKI********** --amazonec2-secret-key UeI4G**********ots7z9Xo --amazonec2-region us-east-2 --amazonec2-zone "a" docker-m
 
