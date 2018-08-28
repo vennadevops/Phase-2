@@ -1,6 +1,6 @@
-### Step-1 Install docker engine.
+### Step-1: Install docker engine.
 
-### Install docker-machine.
+### Step-2: Install docker-machine.
 
 * Crete 3 docker hosts using docker-machine.
   
@@ -10,82 +10,96 @@
 
       docker-machine create --driver amazonec2 --amazonec2-access-key AKI********** --amazonec2-secret-key UeI4G**********ots7z9Xo --amazonec2-region us-east-2 --amazonec2-zone "c" docker-w-2
 
-docker-machine ls
+    * docker-machine ls
 
-* Swam mode:
+### Step-3: Swam mode:
 
-docker-machine ip docker-m
+    docker-machine ls
+    
+    docker-machine ip docker-m
 
-docker-machine ssh docker-m
+    docker-machine ssh docker-m
 
-sudo -i
+    sudo -i
 
-docker swarm init --advertise-addr 18.218.203.69
+    docker swarm init --advertise-addr 18.218.203.69
 
-docker node ls
+    docker node ls
 
-exit
-exit
+    exit
+    exit
 
-docker-machine ssh docker-w-1
+    docker-machine ssh docker-w-1
 
-sudo -i
+    sudo -i
 
-docker swarm join --token SWMTKN-1-0c62o5bu8cuhgtwnw5ja5ohiju3vsec7h4lwdldc0toxmqr3a2-2ktuqceisbznx1c1mmvbmanzh 18.218.203.69:2377
+    docker swarm join --token SWMTKN-1-0c62o5bu8cuhgtwnw5ja5ohiju3vsec7h4lwdldc0toxmqr3a2-2ktuqceisbznx1c1mmvbmanzh 18.218.203.69:2377
 
 
-docker-machine ssh docker-w-1
+    docker-machine ssh docker-w-1
 
-sudo -i
+    sudo -i
 
-docker swarm join --token SWMTKN-1-0c62o5bu8cuhgtwnw5ja5ohiju3vsec7h4lwdldc0toxmqr3a2-2ktuqceisbznx1c1mmvbmanzh 18.218.203.69:2377
+    docker swarm join --token SWMTKN-1-0c62o5bu8cuhgtwnw5ja5ohiju3vsec7h4lwdldc0toxmqr3a2-2ktuqceisbznx1c1mmvbmanzh 18.218.203.69:2377
 
-exit
-exit
+    exit
+    exit
 
-docker-machine ssh docker-m
+    docker-machine ssh docker-m
 
-sudo -i
+    sudo -i
 
-docker node ls
+    docker node ls
 
-docker service create --name devops-web -p 8888:8080 --replicas 2 venkatasykam/devopswebapp:1.0.14
+### Step-4: Services:
 
-docker service ls
+##### 4.1. Create Services:
 
-docker service ps devops-web
+    docker service create --name devops-web -p 8888:8080 --replicas 2 venkatasykam/devopswebapp:1.0.14
 
-launch http://<PublicIP>:8888
+    docker service ls
 
-docker service scale devops-web=5
+    docker service ps devops-web
 
-launch http://<PublicIP>:8888
+    launch http://<PublicIP>:8888
 
-docker service update --image venkatasykam/devopswebapp:1.0.15 devops-web
+##### 4.2. Scale the service:
 
-docker service rollback devops-web
+    docker service scale devops-web=5
 
-docker service ls --> here you can see the image version/tag.
+    launch http://<PublicIP>:8888
+    
+##### 4.3. Update the service:
 
-docker service --help
+    docker service update --image venkatasykam/devopswebapp:1.0.15 devops-web
 
-docker service ls
+##### 4.4. Update the service:
 
-docker service ps devops-web
+    docker service rollback devops-web
 
-docker service inspect --pretty devops-web
+    docker service ls --> here you can see the image version/tag.
 
-docker service inspect devops-web
+##### 4.5. Other commands:
 
-docker service ps devops-web
+    docker service --help
 
-docker service scale devops-web=5
+    docker service ls
 
-docker service ps devops-web
+    docker service ps devops-web
 
-docker service rm devops-web
+    docker service inspect --pretty devops-web
 
-docker service inspect devops-web --> it should return Status: Error: no such service: devops-web, Code: 1
+    docker service inspect devops-web
+
+    docker service ps devops-web
+
+    docker service scale devops-web=5
+
+    docker service ps devops-web
+
+    docker service rm devops-web
+
+    docker service inspect devops-web --> it should return Status: Error: no such service: devops-web, Code: 1
 
 
 
