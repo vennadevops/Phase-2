@@ -1,6 +1,8 @@
 
 * Launch an Ubuntu machine with instance type t2.medium or higher than this. (I tired on t2.xlarge)
 
+* Connect to the instance.
+
 ### Step-1: Install docker engine.
 
    [Dokcer-Installation-Ubuntu](https://github.com/DevOpsBasicSetup/Phase-2/blob/master/Docker/DockerEngine/2.1.Dokcer-Installation-Ubuntu.md)
