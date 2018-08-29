@@ -1,6 +1,9 @@
 
 * Launch an Ubuntu machine with instance type t2.medium or higher than this. (I tired on t2.xlarge)
 
+![image](https://user-images.githubusercontent.com/24622526/44790921-f8f0be00-ab8f-11e8-8bc9-cde45a624240.png)
+
+
 * Connect to the instance.
 
 ### Step-1: Install docker engine.
