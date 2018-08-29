@@ -39,9 +39,9 @@
 
 * Deploy our web files to the webserver location /usr/local/apache2/htdocs/
 
-* cp Phase-2/Docker/DockerCompose/DevOps-Platfrom-Setup/*.jpg /usr/local/apache2/htdocs/
+   * cp Phase-2/Docker/DockerCompose/DevOps-Platfrom-Setup/*.jpg /usr/local/apache2/htdocs/
 
-* cp Phase-2/Docker/DockerCompose/DevOps-Platfrom-Setup/*.html /usr/local/apache2/htdocs/
+   * cp Phase-2/Docker/DockerCompose/DevOps-Platfrom-Setup/*.html /usr/local/apache2/htdocs/
 
 ![image](https://user-images.githubusercontent.com/24622526/44790055-c940b680-ab8d-11e8-8b66-993da66dc990.png)
 
