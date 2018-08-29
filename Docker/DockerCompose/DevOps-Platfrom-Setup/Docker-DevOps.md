@@ -53,3 +53,5 @@
 * Launch the apache webserver URL in any browser: http://[publicIpAddress]:8080
 
 ![image](https://user-images.githubusercontent.com/24622526/44790187-35231f00-ab8e-11e8-9336-8afc2473a241.png)
+
+* Click on Jenkins/sonar/nexus/selenium to access the corresponding DevOps tool.
