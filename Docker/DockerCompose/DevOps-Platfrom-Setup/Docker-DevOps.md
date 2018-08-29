@@ -47,6 +47,9 @@
 
 * update index.html file with IP address: vi /usr/local/apache2/htdocs/index.html
 
+![image](https://user-images.githubusercontent.com/24622526/44790406-ca261800-ab8e-11e8-8f9c-26a264531e07.png)
+
+
 * Launch the apache webserver URL in any browser: http://[publicIpAddress]:8080
 
 ![image](https://user-images.githubusercontent.com/24622526/44790187-35231f00-ab8e-11e8-9336-8afc2473a241.png)
