@@ -1,6 +1,6 @@
 version: "3"
 services:
-  web:
+  nginx_web:
     image: nginx:1.13.8-alpine
     ports:
         - "8080:80"
