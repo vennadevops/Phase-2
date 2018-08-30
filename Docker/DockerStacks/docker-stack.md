@@ -20,7 +20,9 @@
 
 ### Step-3: Swam mode:
 
-    docker swarm init --advertise-addr 18.218.203.69
+
+
+    docker swarm init --advertise-addr 18.218.203.69  # IP address of the machine where we are going to initiate swam.
 
     docker node ls
 
