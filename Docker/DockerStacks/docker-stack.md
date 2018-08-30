@@ -56,7 +56,7 @@
 
 * docker stack deploy -c docker-compose.yml devops
 
-* docker service ls  # Wait for some time to create replocas for services before you access the application from browser. See the below image, once stack deployed, its preparing to create replicats for our services.
+* docker service ls  # Wait for some time to create replicas for services before you access the application from browser. See the below image, once stack deployed, its preparing to create replicas for our services.
 
 * docker service ps devops_cicd
 
