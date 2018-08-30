@@ -56,7 +56,7 @@
 
 * docker stack deploy -c docker-compose.yml devops
 
-* docker service ls  # Wait for some time to create services.
+* docker service ls  # Wait for some time to create replocas for services before you access the application from browser.
 
 * docker service ps devops_cicd
 
