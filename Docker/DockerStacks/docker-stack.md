@@ -47,9 +47,19 @@
 
     docker node ls
     
-    Now the current mjachine is acting as a leader.
+    Now the current machine is acting as a leader.
     
 
 ### Step-4: docker stack:
 
+* 4.1. Create a docker-compose file & copy the content from [docker-compose.yml](https://github.com/DevOpsBasicSetup/Phase-2/blob/master/Docker/DockerStacks/docker-compose.yml)
 
+* docker stack deploy -c docker-compose.yml devops
+
+* docker service ls
+
+* docker service ps devops_cicd
+
+* docker service ps devops_devopsweb
+
+* docker stack rm devops
