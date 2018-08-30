@@ -6,3 +6,13 @@ services:
       replicas: 2
     ports:
       - "8282:8080"
+
+  cicd:
+    image: jenkins:latest
+    ports:
+      - "8080:8080"
+    restart: always
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
