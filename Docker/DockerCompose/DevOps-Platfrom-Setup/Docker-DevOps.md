@@ -38,7 +38,7 @@
 
 * Apache web files default location: /usr/local/apache2/htdocs/index.html
 
-* Install Git & vim: apt-get update && apt-get install git vim.
+* Install Git & vim: apt-get update && apt-get install git vim -y
 
 * Deploy our web files to the webserver location /usr/local/apache2/htdocs/
 
