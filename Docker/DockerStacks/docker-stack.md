@@ -56,10 +56,13 @@
 
 * docker stack deploy -c docker-compose.yml devops
 
-* docker service ls
+* docker service ls  # Wait for some time to create services.
 
 * docker service ps devops_cicd
 
 * docker service ps devops_devopsweb
 
 * docker stack rm devops
+
+![image](https://user-images.githubusercontent.com/24622526/44851535-2604a580-ac50-11e8-91fc-6918c3871d32.png)
+
