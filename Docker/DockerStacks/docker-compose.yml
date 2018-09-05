@@ -3,7 +3,7 @@ services:
   devopsweb:
     image: venkatasykam/devopswebapp:1.0.14
     deploy:
-      replicas: 2
+      replicas: 3
     ports:
       - "8282:8080"
 
