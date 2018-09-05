@@ -277,8 +277,13 @@ http://18.188.5.186:31987
 ![image](https://user-images.githubusercontent.com/24622526/44305579-5bfd7c00-a36a-11e8-9cb7-22b0a19a88ca.png)
 
 
-kubectl delete deployment nginx
+### Delete the deployment
 
-root@ip-172-31-37-121:~# kubectl delete deployment nginx
-deployment.extensions "nginx" deleted
-root@ip-172-31-37-121:~#
+    kubectl delete deployment nginx
+
+
+    root@ip-172-31-37-121:~# kubectl delete deployment nginx
+
+    deployment.extensions "nginx" deleted
+
+    root@ip-172-31-37-121:~#
