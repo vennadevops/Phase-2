@@ -18,13 +18,13 @@ Once the cluster is available: https://kubernetes.io/docs/concepts/workloads/con
 	
 	get the list of services: kubectl get svc (or) kubectl get services
 
-3. curl http://<publicIP>:<externalPort>
+3. curl http://[publicIP]:[externalPort]
 
 	where as <publicIP> can be master's/any node's ip.
 
-4. http://<publicIP>:<externalPort> 
+4. http://[publicIP]:[externalPort]> 
 
-	where as <publicIP> can be master's/any node's ip.
+	where as [publicIP] can be master's or any node's ip.
 
 5. Update the deployment with other images tags/versions.
 
