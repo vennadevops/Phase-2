@@ -16,7 +16,7 @@
 
     * docker-machine ls
 
-### Step-3: Swam mode:
+### Step-3: Swarm mode:
 
     docker-machine ls
     
