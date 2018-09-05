@@ -1,7 +1,9 @@
 
 
 Once the cluster is available: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
-Ex-1:
+
+###### Ex-1:
+
 1. Create the deployment:
 
 	kubectl create deployment devopsweb --image=venkatasykam/devopswebapp:1.0.14
