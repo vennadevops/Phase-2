@@ -49,11 +49,11 @@
     Now the current machine is acting as a leader.
     
 
-### Step-4: docker stack:
+### Step-5: docker stack:
 
-* 4.1. Create a docker-compose file & copy the content from [docker-compose.yml](https://github.com/DevOpsBasicSetup/Phase-2/blob/master/Docker/DockerStacks/docker-compose.yml)
+* 5.1. Create a docker-compose file & copy the content from [docker-compose.yml](https://github.com/DevOpsBasicSetup/Phase-2/blob/master/Docker/DockerStacks/docker-compose.yml)
 
-* docker stack deploy -c docker-compose.yml devops
+* 5.2. docker stack deploy -c docker-compose.yml devops
 
 * docker service ls  # Wait for some time to create replicas for services before you access the application from browser. See the below image, once stack deployed, its preparing to create replicas for our services.
 
