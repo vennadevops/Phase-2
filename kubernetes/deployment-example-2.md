@@ -20,7 +20,7 @@ Once the cluster is available: https://kubernetes.io/docs/concepts/workloads/con
 
 3. curl http://[publicIP]:[externalPort]
 
-	where as <publicIP> can be master's/any node's ip.
+	where as [publicIP] can be master's/any node's ip.
 
 4. http://[publicIP]:[externalPort]> 
 
