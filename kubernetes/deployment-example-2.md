@@ -2,7 +2,7 @@
 
 Once the cluster is available: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
-###### Ex-1:
+###### Ex-2:
 
 1. Create the deployment:
 
