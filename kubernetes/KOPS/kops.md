@@ -1,6 +1,6 @@
 * Referecne: https://medium.com/containermind/how-to-create-a-kubernetes-cluster-on-aws-in-few-minutes-89dda10354f4
 
-* Check the logs if you have any issues: 
+* Check the logs if you have any issues: https://github.com/DevOpsBasicSetup/Phase-2/blob/master/kubernetes/KOPS/kops-logs.txt
 
 #### Step-1: Create the Access Key Id & Secret Key in AWS console. 
 
