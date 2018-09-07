@@ -11,9 +11,9 @@
 	AmazonS3FullAccess
 	AmazonVPCFullAccess
 
-	AWS Access Key ID: AKIAI6NQVFRAHWXWCOYQ
+	AWS Access Key ID: AKIA*******WCOYQ
 
-	AWS Secret Access Key: yWS5QBlCZ7fp1VQ9FkBaB/qczR3abG+438GSs781
+	AWS Secret Access Key: yWS5QBlC******GSs781
 	
 #### Step-2: Launch an Ubuntu instance with type t2.medium. And connect to the machine.
 
