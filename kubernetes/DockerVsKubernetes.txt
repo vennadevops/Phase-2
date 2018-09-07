@@ -47,7 +47,7 @@ Kubernetes Cluster
 1. Setup Cluster
 
 	1 - master
-	2 - nodes
+	2 - nodes (3. pods)
 	
 	initiate cluser: kubeadm init
 	Install n/w : kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
