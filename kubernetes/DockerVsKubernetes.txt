@@ -36,11 +36,11 @@ Kubernetes:
 
 0. Install required packages
 
-	Docker          --> Containerization
-	kubeadm			--> Creating/managing clusters
-	Kubelet			--> Managing nodes, pods, communication b/w the nodes/pods.
-	Kubectl			--> master to nodes, creating deployments etc.
-	Kubernetes-cni  --> n/w.
+	Docker/rkt etc  	        --> Containerization
+	kubeadm/minikube/kops/julu etc  --> Creating/managing clusters
+	Kubelet				--> Managing nodes, pods, communication b/w the nodes/pods.
+	Kubectl				--> master to nodes, creating deployments etc.
+	Kubernetes-cni  		--> n/w.
 
 Kubernetes Cluster
 
