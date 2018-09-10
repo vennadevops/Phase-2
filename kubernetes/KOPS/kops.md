@@ -59,6 +59,8 @@ Step-4: Configure the AWS credentials: Run the command and enter the access key 
 	5.1. Create environment variable: export bucket_name=svn-kops-state-store
 		
 	5.2. Create s3 bucket: aws s3api create-bucket --bucket ${bucket_name} --region us-west-1
+	
+	     Note: Region wise there are some contraints/restricts on s3 bucket creation. ex: aws s3api create-bucket --bucket ${bucket_name} --region us-east-2 --create-bucket-configuration LocationConstraint=us-east-2
 
 	5.3. Enable versioning for the above S3 bucket: aws s3api put-bucket-versioning --bucket ${bucket_name} --versioning-configuration Status=Enabled
 
