@@ -1,3 +1,10 @@
+Main features:
+
+1. Containerization. - docker engine
+
+2. Managing conatiners - docker swarm
+
+
 Docker:
 -------
 
