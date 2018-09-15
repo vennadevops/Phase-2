@@ -9,6 +9,7 @@
 	AmazonEC2FullAccess
 	AmazonRoute53FullAccess
 	AmazonS3FullAccess
+	IAMFullAccess
 	AmazonVPCFullAccess
 
 	AWS Access Key ID: AKIA*******WCOYQ
