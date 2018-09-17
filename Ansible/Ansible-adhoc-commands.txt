@@ -24,6 +24,9 @@ ansible all -m yum -a "name=httpd state=absent"
 #Create directories in target hosts
 ansible all -m file -a "dest=/root/ansi state=directory"
 
+#Create file on target hosts
+ansible all -m file -a "dest=/root/ansi/newfile-ansi.txt state=touch"
+
 #Delete directories in target hosts
 ansible all -m file -a "dest=/root/ansi state=absent"
 
