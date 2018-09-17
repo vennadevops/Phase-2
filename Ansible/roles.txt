@@ -1,0 +1,5 @@
+ansible-galaxy init webapprole
+
+or 
+
+ansible-galaxy init --force --offline webapprole
