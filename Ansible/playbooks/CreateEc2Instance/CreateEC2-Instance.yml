@@ -4,7 +4,7 @@
   gather_facts: False
   vars:
     instance_type: t2.micro
-    security_group: ansible-aws
+    security_group: ansible-aws-1
     image: ami-03291866
     keypair: jenkins
     region: us-east-2
