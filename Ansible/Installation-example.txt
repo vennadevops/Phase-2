@@ -1,3 +1,5 @@
+#Remove this line
+
 #Reference: https://docs.ansible.com/ansible/latest/index.html
 
 #Once connected to redhat server, login to root user : sudo -i
