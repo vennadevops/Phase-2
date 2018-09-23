@@ -3,3 +3,5 @@ ansible-galaxy init webapprole
 or 
 
 ansible-galaxy init --force --offline webapprole
+
+newline from venkatasykam account phase-2
