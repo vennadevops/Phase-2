@@ -83,6 +83,26 @@
         
         docker run -d -p 8899:8080 --name jenkins-3 -v /opt/jenkins:/var/jenkins_home/ jenkins
         
+#### Example-5:
+
+        docker swarm init --advertise-addr [publicIP]
+        
+        docker node ls
+
+        docker service create --name devops-jenkins-1 -p 8889:8080 --mount type=bind,src=/opt/jenkins,dst=/var/jenkins_home,readonly=false --replicas 1 jenkins
+        
+        docker service ls
+        
+        docker service ps devops-jenkins-1
+        
+        ll /opt/jenkins
+        
+        docker ps
+        
+        docker stop <container-id> or docker kill <container-id> 
+        
+        
+        
     
     
     
