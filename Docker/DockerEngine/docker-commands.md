@@ -63,7 +63,7 @@
     
     sudo chown -R 1000:1000 /opt/jenkins
     
-    docker run -d -p 8888:8080 --name jenkins -v /opt/jenkins:/var/jenkins_home/ jenkins
+    docker run -d -p 8888:8080 --name jenkins-1 -v /opt/jenkins:/var/jenkins_home/ jenkins
     
     3.1. 
     
@@ -79,9 +79,9 @@
         
 #### Example-4:
     
-        docker run -d -p 9999:8080 --name jenkins-new --volumes-from  <id-of-above-container> jenkins
+        docker run -d -p 9999:8080 --name jenkins-2 --volumes-from  <id-of-above-container> jenkins
         
-        docker run -d -p 8899:8080 --name jenkins-1 -v /opt/jenkins:/var/jenkins_home/ jenkins
+        docker run -d -p 8899:8080 --name jenkins-3 -v /opt/jenkins:/var/jenkins_home/ jenkins
         
     
     
