@@ -57,5 +57,29 @@
      
      docker container rm webserver apache-web
   
+#### Example-3: 
+
+    mkdir -p /opt/jenkins
+    
+    sudo chown -R 1000:1000 /opt/jenkins
+    
+    docker run -d -p 8888:8080 --name jenkins -v /opt/jenkins:c jenkins
+    
+    3.1. 
+    
+        Create the folder in docker host: /opt/jenkins/sample
+
+        check the docker container whether the newly created folder is there in docker container or not. /var/jenkins_home/sample
         
-  
+    3.2.
+    
+        Create the folder in docker host:  /var/jenkins_home/sample-2
+
+        check the docker container whether the newly created folder is there in docker container or not. /opt/jenkins/sample-2
+        
+    
+    
+    
+    
+    
+    
