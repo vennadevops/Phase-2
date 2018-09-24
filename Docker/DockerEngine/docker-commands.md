@@ -89,17 +89,21 @@
         
         docker node ls
 
-        docker service create --name devops-jenkins-1 -p 8889:8080 --mount type=bind,src=/opt/jenkins,dst=/var/jenkins_home,readonly=false --replicas 1 jenkins
+        docker service create --name devops-jenkins -p 8889:8080 --mount type=bind,src=/opt/jenkins,dst=/var/jenkins_home,readonly=false --replicas 1 jenkins
         
         docker service ls
         
-        docker service ps devops-jenkins-1
+        docker service ps devops-jenkins
         
         ll /opt/jenkins
         
-        docker ps
+        docker ps --> its will give the runing containers list
         
         docker stop <container-id> or docker kill <container-id> 
+        
+        docker ps --> no contaner is running
+        
+        docker service ps devops-jenkins --> you will notice that, new replica has been created
         
         
         
