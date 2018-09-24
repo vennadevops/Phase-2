@@ -63,7 +63,7 @@
     
     sudo chown -R 1000:1000 /opt/jenkins
     
-    docker run -d -p 8888:8080 --name jenkins -v /opt/jenkins:c jenkins
+    docker run -d -p 8888:8080 --name jenkins -v /opt/jenkins:/var/jenkins_home/ jenkins
     
     3.1. 
     
@@ -76,6 +76,12 @@
         Create the folder in docker host:  /var/jenkins_home/sample-2
 
         check the docker container whether the newly created folder is there in docker container or not. /opt/jenkins/sample-2
+        
+#### Example-4:
+    
+        docker run -d -p 9999:8080 --name jenkins-new --volumes-from  <id-of-above-container> jenkins
+        
+        docker run -d -p 8899:8080 --name jenkins-1 -v /opt/jenkins:/var/jenkins_home/ jenkins
         
     
     
