@@ -18,6 +18,7 @@
 
      docker exec -it webserver touch "devops.txt"
 
+     docker container ls
 
 #### Example-2:
 
