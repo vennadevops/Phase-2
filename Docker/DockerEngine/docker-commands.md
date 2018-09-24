@@ -40,7 +40,9 @@
 
      docker cp index.html apache-web:/usr/local/apache2/htdocs/index.html
    
+     docker container stop webserver apache-web
+     
+     docker container rm webserver apache-web
   
-  
-
+        
   
