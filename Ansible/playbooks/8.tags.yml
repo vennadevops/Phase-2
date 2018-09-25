@@ -1,3 +1,4 @@
+# If we want to run only the specific task, we can achieve thru tags option.
 # ansible-playbook ubuntu.yml -t configure
 - hosts:
     - ubuntu # # Make sure python avilable on target ubuntu instance, apt-get install python -y
