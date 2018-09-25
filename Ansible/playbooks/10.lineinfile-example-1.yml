@@ -1,3 +1,5 @@
+# lineinfile module is useful to add a new line or replace the line.
+#
 # Create a text file src/word.txt with below three line
 #    word-1
 #
@@ -6,6 +8,7 @@
 #    word-1
 #
 # Using below play book we are going to insert a new line after the "word-2"
+#
 # since it is the local operation, host should be 'localhost'
 
 - hosts: localhost
