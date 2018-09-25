@@ -58,3 +58,7 @@ ansible all -m command -a "yum update"
 
 ansible all -a "uptime"
 
+ansible all -m yum -a "name=git state=latest"
+
+ansible all -m git -a "repo=https://github.com/DevOpsBasicSetup/Phase-2.git dest=/root/DevOpsBasicSetup/Phase-2 version=HEAD"
+
