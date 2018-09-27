@@ -77,6 +77,8 @@ create and prepare a container:
 Login to docker local registry: 
 
 	docker login localhost:8080
+	
+Setup local registry: (local docker hub): https://docs.docker.com/registry/deploying/#run-a-local-registry
 
 
 	
