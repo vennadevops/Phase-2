@@ -46,6 +46,8 @@ kubectl expose deployment devops-deployment --port=8080 --type=NodePort
 kubectl get svc devops-deployment
 
 
+docker ps
+
 kubectl get nodes
 
 kubectl describe node <node-name>
