@@ -39,7 +39,7 @@ kubectl expose deployment nginx-deployment --port=80 --type=NodePort
 kubectl get svc nginx-deployment
 
 ex-2:
-kubectl run devops-deployment --image=venkatasykam/devopswebapp:1.0.13 --port=8080
+kubectl run devops-deployment --image=venkatasykam/devopswebapp:1.0.13 --port=8080 --replicas=1
 
 kubectl expose deployment devops-deployment --port=8080 --type=NodePort
 
