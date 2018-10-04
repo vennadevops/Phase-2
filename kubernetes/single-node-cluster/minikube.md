@@ -53,6 +53,8 @@ curl http://172.17.0.94:8888
 
 docker ps | grep nginx-deploy
 
+kubectl scale --replicas=3 deployment nginx-deploy
+
 kubectl get nodes
 
 kubectl describe node <node-name>
