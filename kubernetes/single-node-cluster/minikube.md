@@ -45,6 +45,11 @@ kubectl expose deployment devops-deployment --port=8181 --target-port=8080 --typ
 
 kubectl get svc devops-deployment
 
+ex-3:
+Single command to run & expose: kubectl run nginx-deploy --image=nginx --replicas=1 --port=80 --hostport=8888
+
+curl http://172.17.0.94:8888
+
 
 docker ps
 
