@@ -51,7 +51,7 @@ Single command to run & expose: kubectl run nginx-deploy --image=nginx --replica
 curl http://172.17.0.94:8888
 
 
-docker ps
+docker ps | grep nginx-deploy
 
 kubectl get nodes
 
