@@ -11,6 +11,6 @@ pip install botocore
 
 pip install boto3
 
-export AWS_ACCESS_KEY_ID=AKIA4AVHEKNHJIWLZJMM
+export AWS_ACCESS_KEY_ID=AKIA*****WLZJMM
 
-export AWS_SECRET_ACCESS_KEY=hQGhoEo6lZgVb+0ha5gcs6qvp0ag0fgq3Sqh5zPx
+export AWS_SECRET_ACCESS_KEY=hQGhoEo***********gq3Sqh5zPx
