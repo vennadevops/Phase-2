@@ -60,3 +60,5 @@
 * Click on Jenkins/sonar/nexus/selenium to access the corresponding DevOps tool.
 
 * Similarly, we can write yml files for different tools and run docker-compose to create containers.
+
+Note: Nexus will take few minuits to up.
