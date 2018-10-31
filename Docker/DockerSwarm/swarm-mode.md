@@ -110,3 +110,5 @@
 
    docker swarm join-token manager -q
    docker swarm join-token worker -q
+
+Note: If the manager down, docker swarm init --force-new-cluster
