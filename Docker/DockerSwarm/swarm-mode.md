@@ -106,4 +106,7 @@
     docker service inspect devops-web --> it should return Status: Error: no such service: devops-web, Code: 1
 
 
+#### More than one manager
 
+   docker swarm join-token manager -q
+   docker swarm join-token worker -q
