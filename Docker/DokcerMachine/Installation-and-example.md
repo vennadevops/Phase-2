@@ -7,7 +7,7 @@
 
 ### Install AWS CLI
 
-    apt-get install awscli -y
+    apt-get update -y && apt-get install awscli -y
 
 ### Install docker on Ubuntu.
 
