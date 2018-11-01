@@ -45,11 +45,11 @@
 
     aws configure
     
-    root@ip-172-31-18-41:~# aws configure
-    AWS Access Key ID [None]: ************
-    AWS Secret Access Key [None]: *******
-    Default region name [None]: us-east-2
-    Default output format [None]: json
+        root@ip-172-31-18-41:~# aws configure
+        AWS Access Key ID [None]: ************
+        AWS Secret Access Key [None]: *******
+        Default region name [None]: us-east-2
+        Default output format [None]: json
 
 * Run the below command
 
