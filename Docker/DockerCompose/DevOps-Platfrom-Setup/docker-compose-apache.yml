@@ -3,4 +3,4 @@ services:
   apache_web:
     image: httpd:2.4
     ports:
-        - "8080:80"
+        - "80:80"
