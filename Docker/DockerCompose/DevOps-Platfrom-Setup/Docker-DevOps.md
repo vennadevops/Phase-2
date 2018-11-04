@@ -37,7 +37,7 @@
 
 ##### 3.4. Deploy web files:
 
-* connect to apache webserver container: 
+* copy the web files to apache webserver container: 
 
       docker ps
       
@@ -53,7 +53,7 @@
 ![image](https://user-images.githubusercontent.com/24622526/47959672-e062b100-dfe1-11e8-8030-ab3f6d10326c.png)
 
 
-* Launch the apache webserver URL in any browser: http://[publicIpAddress]:80 (or)
+* Launch the apache webserver URL in any browser: http://[publicIpAddress]:80 (or) http://[publicIpAddress]
 
 ![image](https://user-images.githubusercontent.com/24622526/47959651-531f5c80-dfe1-11e8-9f78-b03160131b06.png)
 
