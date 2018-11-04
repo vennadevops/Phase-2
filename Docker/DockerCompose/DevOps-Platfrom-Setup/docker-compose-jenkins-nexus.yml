@@ -9,8 +9,8 @@ services:
     ports:
       - "8181:8080"
       - "50000:50000"
-    environment:
-      JENKINS_OPTS: "--prefix=/jenkins"
+    #environment:
+    #JENKINS_OPTS: "--prefix=/jenkins"
 
   nexus:
     image: sonatype/nexus
