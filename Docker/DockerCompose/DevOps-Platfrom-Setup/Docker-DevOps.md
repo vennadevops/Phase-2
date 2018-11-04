@@ -28,29 +28,29 @@
 
     docker-compose -f  docker-compose-apache.yml -f docker-compose-SeleniumGrid.yml -f docker-compose-jenkins-nexus.yml -f docker-compose-sonar.yml up -d
     
-##### 3.3. Deploy web files:
+#### 3.3. update index.html with IP address
+
+* update index.html file with IP address: vi index.html
+
+![image](https://user-images.githubusercontent.com/24622526/44790406-ca261800-ab8e-11e8-8f9c-26a264531e07.png)
+
+
+##### 3.4. Deploy web files:
 
 * connect to apache webserver container: 
 
       docker ps
       
-      docker exec -it <container-id-of-apache-web-server> bash
+      docker cp index.html a7d4c9895408:/usr/local/apache2/htdocs/
+      docker cp jenkins.jpg a7d4c9895408:/usr/local/apache2/htdocs/
+      docker cp nexus.jpg a7d4c9895408:/usr/local/apache2/htdocs/
+      docker cp selenium.jpg a7d4c9895408:/usr/local/apache2/htdocs/
+      docker cp sonar.jpg a7d4c9895408:/usr/local/apache2/htdocs/
+
 
 * Apache web files default location: /usr/local/apache2/htdocs/index.html
 
-* Install Git & vim: apt-get update && apt-get install git vim -y
-
-* Deploy our web files to the webserver location /usr/local/apache2/htdocs/
-
-   * cp Phase-2/Docker/DockerCompose/DevOps-Platfrom-Setup/*.jpg /usr/local/apache2/htdocs/
-
-   * cp Phase-2/Docker/DockerCompose/DevOps-Platfrom-Setup/*.html /usr/local/apache2/htdocs/
-
-![image](https://user-images.githubusercontent.com/24622526/44790055-c940b680-ab8d-11e8-8b66-993da66dc990.png)
-
-* update index.html file with IP address: vi /usr/local/apache2/htdocs/index.html
-
-![image](https://user-images.githubusercontent.com/24622526/44790406-ca261800-ab8e-11e8-8f9c-26a264531e07.png)
+![image](https://user-images.githubusercontent.com/24622526/47959672-e062b100-dfe1-11e8-8030-ab3f6d10326c.png)
 
 
 * Launch the apache webserver URL in any browser: http://[publicIpAddress]:80 (or)
