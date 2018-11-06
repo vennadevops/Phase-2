@@ -8,7 +8,7 @@ https://vsupalov.com/difference-docker-compose-and-docker-stack/
 
 Deploy/install the software into server.
 
-without SWARM:
+without SWARM:  "docker run" vs "docker-compose" - 1 container per 1 image
 --------------
 1. "docker run" command to run our application i.e., docker image
 
@@ -19,7 +19,7 @@ without SWARM:
 	docker engine
 	docker-compose
 
-with SWARM:
+with SWARM:  "docker service" vs "docker stack"  - more than 1 container per 1 image
 -----------
 3. docker swarm - we can deploy our apps(only one at a time) using "docker service"
 
@@ -27,7 +27,7 @@ with SWARM:
 	docker swarm
 	docker-machine(optional)
 	
-4. docker stacks - deploy more than one app at a time using docker-compose
+4. docker stack - deploy more than one app at a time using docker-compose
 
 	docker engine
 	docker swarm
