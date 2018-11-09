@@ -31,6 +31,10 @@
   or
   
   kubectl delete pods/pod/nodes/node/deploy/deployments/services/svc [name] --force
+  
+* kubectl logs [pod name]
+
+* 
 
 
   
