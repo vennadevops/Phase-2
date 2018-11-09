@@ -4,6 +4,8 @@
     
     kubectl help
 
+* kubectl cluster-info
+
 * create the deployments/pods/containers
 
   kubectl create deployment [delployment-name] --image=[docker-image-name]
@@ -28,6 +30,8 @@
 
 * kubectl get pod/[pod-1] rs/[ra-name-1] deploy/[deployment-name]
 
+* kubectl get pod [pod-name] -o=[yaml/json/name/wide]
+
 * description(information) of the pods/nodes/deployments/services
 
   kubectl describe [pods/pod/po]/[nodes/node/no]/[deploy/deployments]/[services/service/svc]/[replicasets/rs] [name]
@@ -40,6 +44,8 @@
   
   kubectl delete [pods/pod/po]/[nodes/node/no]/[deploy/deployments]/[services/service/svc]/[replicasets/rs] [name] --force
   
+* kubectl delete pods --all
+
 * kubectl logs [pod name]
 
 * kubectl apply:
@@ -50,8 +56,24 @@
 
   ex: kubectl taint nodes --all node-role.kubernetes.io/master-
   
-* 
+* kubectl api-versions
 
+* kubectl apply -f FILENAME [flags]
+
+* kubectl [command] [TYPE] [NAME] --sort-by=<jsonpath_exp>
+
+    ex: kubectl get pods --sort-by=.metadata.name
+    
+* kubectl get replicationcontroller <rc-name>
+
+
+* kubectl exec POD [-c CONTAINER] [-i] [-t] [flags] [-- COMMAND [args...]]
+
+    ex: kubectl exec [pod-name] date
+    
+    kubectl exec -ti <pod-name> /bin/bash --> it will interact with first created container
+    
+    kubectl exec -ti <pod-name> -c <container-name> /bin/bash --> it will interact with specified container
 
 
 
