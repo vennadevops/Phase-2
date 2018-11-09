@@ -1,5 +1,9 @@
 ### kubectl-commands: https://kubernetes.io/docs/reference/kubectl/overview/
 
+
+https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands
+
+
     kubectl [command] [TYPE] [NAME] [flags]
     
     kubectl help
