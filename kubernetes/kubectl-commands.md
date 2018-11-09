@@ -10,5 +10,12 @@
   
 * run the specific container
 
+
+kubectl get pods/pod/nodes/node
+
+kubectl describe
+
+
+
   
   
