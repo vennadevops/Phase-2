@@ -74,6 +74,8 @@
     kubectl exec -ti <pod-name> /bin/bash --> it will interact with first created container
     
     kubectl exec -ti <pod-name> -c <container-name> /bin/bash --> it will interact with specified container
+    
+* kubectl plugin list
 
 
 
