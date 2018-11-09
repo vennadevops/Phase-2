@@ -54,14 +54,42 @@ ex-2:
 
 ex-3:
 
-Single command to run & expose: kubectl run nginx-deploy --image=nginx --replicas=1 --port=80 --hostport=8888
+    kubectl create deployment nginx --image=nginx
+    
+    kubectl create service nodeport nginx --tcp=80:80
+    
+    kubectl get svc nginx
+    
 
-curl http://172.17.0.94:8888
+ex-4: 
 
+    kubectl create deployment tomcat --image=tomcat
+    
+    kubectl create service nodeport tomcat --tcp=8080:8080
+    
+    kubectl get svc tomcat
 
-docker ps | grep nginx-deploy
+ex-5: Single command to run & expose: 
 
-kubectl scale --replicas=3 deployment nginx-deploy
+    kubectl run nginx-deploy --image=nginx --replicas=1 --port=80 --hostport=8888
+
+    curl http://172.17.0.94:8888
+
+    docker ps | grep nginx-deploy
+
+    kubectl scale --replicas=3 deployment nginx-deploy
+
+ex-6: Single command to run & expose: 
+
+    kubectl run jenkins-cicd --image=jenkins --replicas=2 --port=8080 --hostport=8888
+
+    curl http://172.17.0.94:8888
+
+ex-8: Single command to run & expose: 
+
+    kubectl run jenkins-cicd --image=sonarqube --replicas=2 --port=9000 --hostport=9999
+
+    curl http://172.17.0.94:9999
 
 kubectl get nodes
 
