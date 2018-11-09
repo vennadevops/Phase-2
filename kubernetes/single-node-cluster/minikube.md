@@ -87,7 +87,7 @@ ex-6: Single command to run & expose:
 
 ex-8: Single command to run & expose: 
 
-    kubectl run jenkins-cicd --image=sonarqube --replicas=2 --port=9000 --hostport=9999
+    kubectl run sonarqube --image=sonarqube --replicas=2 --port=9000 --hostport=9999
 
     curl http://172.17.0.94:9999
 
