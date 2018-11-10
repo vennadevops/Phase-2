@@ -82,6 +82,11 @@ https://kubernetes.io/docs/reference/kubectl/cheatsheet/
     
 * kubectl plugin list
 
+* kubectl cp [source] [destination]
+
+     source : local-path
+     destination: pod-name:container-path
+
 
 
   
