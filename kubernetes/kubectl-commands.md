@@ -86,6 +86,8 @@ https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
      source : local-path
      destination: pod-name:container-path
+     
+     ex: kubectl cp index.html [nginx-pod-name]:[container-nginx-path]
 
 
 
