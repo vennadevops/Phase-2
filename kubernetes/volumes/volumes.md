@@ -15,7 +15,7 @@
 
   /var/lib/kubelet/pods/aba4a158-e5dc-11e8-91cf-024da053adc6/volumes/kubernetes.io~empty-dir/nginx-data/sample.html
   
-  kubectl delete deploy/nginx-deploy svc/nginx-deploy
+  kubectl delete deploy/nginx-vol svc/nginx-vol
   
 ###### Ex-2: 
 
