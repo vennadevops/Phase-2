@@ -15,6 +15,8 @@
 
   /var/lib/kubelet/pods/aba4a158-e5dc-11e8-91cf-024da053adc6/volumes/kubernetes.io~empty-dir/nginx-data/sample.html
   
+  kubectl delete deploy/nginx-deploy svc/nginx-deploy
+  
 ###### Ex-2: 
 
    kubectl create -f [jenkins-vol-deploy.yml](https://github.com/DevOpsPlatform/Phase-2/blob/master/kubernetes/yml/jenkins-vol-deploy.yml)
@@ -26,5 +28,7 @@
    find / -name "jobs"
   
    /var/lib/kubelet/pods/6bdd4b58-e5e0-11e8-91cf-024da053adc6/volumes/kubernetes.io~empty-dir/jenkins-vol/
+   
+   kubectl delete deploy/jenkins-vol-deploy svc/jenkins-vol-deploy
   
 
