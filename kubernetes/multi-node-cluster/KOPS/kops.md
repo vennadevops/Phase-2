@@ -65,13 +65,11 @@ Step-4: Configure the AWS credentials: Run the command and enter the access key 
 	
 #### Step-6: Create an AWS S3 bucket for kops to persist its state:
 
-	6.1. Create environment variable: export bucket_name=svn-kops-state-store
-		
-	6.2. Create s3 bucket: aws s3api create-bucket --bucket ${bucket_name} --region us-west-1
+	6.1. Create s3 bucket: aws s3api create-bucket --bucket ${bucket_name} --region us-west-1
 	
 	     Note: Region wise there are some contraints/restricts on s3 bucket creation. ex: aws s3api create-bucket --bucket ${bucket_name} --region us-east-2 --create-bucket-configuration LocationConstraint=us-east-2
 
-	6.3. Enable versioning for the above S3 bucket: aws s3api put-bucket-versioning --bucket ${bucket_name} --versioning-configuration Status=Enabled
+	6.2. Enable versioning for the above S3 bucket: aws s3api put-bucket-versioning --bucket ${bucket_name} --versioning-configuration Status=Enabled
 
 #### Step-7: ssh-keygen -t rsa
 
