@@ -109,8 +109,11 @@ Step-4: Configure the AWS credentials: Run the command and enter the access key 
 	
 ![image](https://user-images.githubusercontent.com/24622526/45142066-1254c400-b1a7-11e8-8a17-1b482cdfed30.png)
 
+#### Step-11: Connect to master
+
+	ssh -i ~/.ssh/id_rsa admin@[master-host-name]
 	
-#### Step-11: Delete the cluster:
+#### Step-12: Delete the cluster:
 
 	kops delete cluster --name=${KOPS_CLUSTER_NAME} --state=${KOPS_STATE_STORE} --yes
 	
