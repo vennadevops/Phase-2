@@ -87,6 +87,8 @@ Step-4: Configure the AWS credentials: Run the command and enter the access key 
 	
 	8.6. kubectl cluster-info
 	
+	8.7. Admin pwd: kubectl config view or kops get secrets kube --type secret -oplaintext
+	
 ![image](https://user-images.githubusercontent.com/24622526/45141975-dae61780-b1a6-11e8-8733-7f0badb52c2a.png)
 
 ![image](https://user-images.githubusercontent.com/24622526/45142130-40d29f00-b1a7-11e8-89a5-eb9da3b859e6.png)
@@ -111,7 +113,7 @@ Step-4: Configure the AWS credentials: Run the command and enter the access key 
 
 #### Step-11: Connect to master
 
-	ssh -i ~/.ssh/id_rsa admin@[master-host-name]
+	ssh -i ~/.ssh/id_rsa admin@[master-ip or node-ip]
 	
 #### Step-12: Delete the cluster:
 
