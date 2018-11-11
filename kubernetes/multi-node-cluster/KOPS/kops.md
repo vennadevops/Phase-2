@@ -55,21 +55,23 @@ Step-4: Configure the AWS credentials: Run the command and enter the access key 
 	Default region name [None]: us-west-1
 	Default output format [None]: json
 
-#### Step-5: Create an AWS S3 bucket for kops to persist its state:
-
-	5.1. Create environment variable: export bucket_name=svn-kops-state-store
-		
-	5.2. Create s3 bucket: aws s3api create-bucket --bucket ${bucket_name} --region us-west-1
-	
-	     Note: Region wise there are some contraints/restricts on s3 bucket creation. ex: aws s3api create-bucket --bucket ${bucket_name} --region us-east-2 --create-bucket-configuration LocationConstraint=us-east-2
-
-	5.3. Enable versioning for the above S3 bucket: aws s3api put-bucket-versioning --bucket ${bucket_name} --versioning-configuration Status=Enabled
-
 #### Step-6: Create environment variables for bucket name & cluster name. You can update the below variables in vi ~/.profile Or vi ~/.bash_profile
 
 	export bucket_name=svn-kops-state-store
 	export KOPS_CLUSTER_NAME=venkat.k8s.local	
 	export KOPS_STATE_STORE=s3://${bucket_name}
+
+   * run the command: source ~/.profile Or source ~/.bash_profile
+	
+#### Step-6: Create an AWS S3 bucket for kops to persist its state:
+
+	6.1. Create environment variable: export bucket_name=svn-kops-state-store
+		
+	6.2. Create s3 bucket: aws s3api create-bucket --bucket ${bucket_name} --region us-west-1
+	
+	     Note: Region wise there are some contraints/restricts on s3 bucket creation. ex: aws s3api create-bucket --bucket ${bucket_name} --region us-east-2 --create-bucket-configuration LocationConstraint=us-east-2
+
+	6.3. Enable versioning for the above S3 bucket: aws s3api put-bucket-versioning --bucket ${bucket_name} --versioning-configuration Status=Enabled
 
 #### Step-7: ssh-keygen -t rsa
 
