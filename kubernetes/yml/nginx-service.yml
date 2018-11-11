@@ -1,4 +1,4 @@
-# kubectl create -f 1.nginx-service.yml
+# kubectl create -f nginx-service.yml
 apiVersion: v1
 kind: Service
 metadata:
