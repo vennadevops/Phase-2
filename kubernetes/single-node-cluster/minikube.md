@@ -85,11 +85,15 @@ ex-6: Single command to run & expose:
 
     curl http://172.17.0.94:8888
 
-ex-8: Single command to run & expose: 
+ex-7: Single command to run & expose: 
 
     kubectl run sonarqube --image=sonarqube --replicas=2 --port=9000 --hostport=9999
 
     curl http://172.17.0.94:9999
+
+kubectl get all
+
+kubectl --namespace=kube-system get all
 
 kubectl get nodes
 
