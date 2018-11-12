@@ -80,7 +80,7 @@ https://kubernetes.io/docs/reference/kubectl/cheatsheet/
     
     kubectl exec -ti <pod-name> /bin/bash --> it will interact with first created container
     
-    kubectl exec -ti <pod-name> -c <container-name> /bin/bash --> it will interact with specified container
+    kubectl exec -ti <pod-name> -c <container-name> /bin/bash --> it will interact with specified container, if you are not sure about the container name, describe pod.  kubectl describe pod [pod-name].
     
 * kubectl plugin list
 
