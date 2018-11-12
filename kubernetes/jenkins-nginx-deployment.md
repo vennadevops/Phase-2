@@ -32,6 +32,14 @@ kubectl cp sample.html jen-nginx-deployment-6dc6c78687-5h8hr:/usr/share/nginx/ht
 
 kubectl exec [pod-name] -c nginx-container ls /usr/share/nginx/html/
 
+kubectl expose deployment.apps/jen-nginx-deployment --type=NodePort
+
+kubectl get all (or) kubectl get svc
+
+http://[public-ip]:[nginx-node-port]
+
+http://[public-ip]:[jenkins-node-port]
+
 
 
 
