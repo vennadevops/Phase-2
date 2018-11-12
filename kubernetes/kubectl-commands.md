@@ -51,7 +51,7 @@ https://kubernetes.io/docs/reference/kubectl/cheatsheet/
   
   kubectl delete [pods/pod/po]/[nodes/node/no]/[deploy/deployments]/[services/service/svc]/[replicasets/rs] [name] --force
   
-* kubectl delete pods --all
+* kubectl delete [pods|nodes|deploy|svc] --all
 
 * kubectl logs [pod name]
 
