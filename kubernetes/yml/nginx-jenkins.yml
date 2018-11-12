@@ -1,77 +1,24 @@
-# nginx-jenkins.yml
-
-# ------------------- nginx deployment ------------------- #
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: jen-nginx-deployment
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: jen-nginx
   replicas: 2
   template:
     metadata:
       labels:
-        app: nginx
+        app: jen-nginx
     spec:
       containers:
-      - name: nginx
+      - name: nginx-container
         image: nginx
         ports:
         - containerPort: 80
 
-# ------------------- nginx service ------------------- #
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx-deployment
-  labels:
-    app: nginx
-spec:
-  type: NodePort
-  ports:
-  - port: 80
-    nodePort: 30080
-  selector:
-    app: nginx
-    
-# ------------------- jenkins deploy ------------------- #
-
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: jenkins-deploy
-spec:
-  selector:
-    matchLabels:
-      app: jenkins
-  replicas: 2
-  template:
-    metadata:
-      labels:
-        app: jenkins
-    spec:
-      containers:
-      - name: jenkins
+      - name: jenkins-container
         image: jenkins
         ports:
         - containerPort: 8080
-
-# ------------------- jenkins service ------------------- #
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: jenkins-deploy
-  labels:
-    app: jenkins
-spec:
-  type: NodePort
-  ports:
-  - port: 8080
-    nodePort: 30081
-  selector:
-    app: jenkins
