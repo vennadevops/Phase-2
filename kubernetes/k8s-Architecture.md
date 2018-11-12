@@ -37,7 +37,7 @@ https://www.aquasec.com/wiki/display/containers/Kubernetes+Architecture+101
 
 -----
 
-**pod**:
+* **pod**:
 generally refers to one or more containers that should be controlled as a single application. A pod encapsulates application containers, storage resources, a unique network ID and other configuration on how to run the containers.
 
 * **Service**: pods are volatile, that is Kubernetes does not guarantee a given physical pod will be kept alive (for instance, the replication controller might kill and start a new set of pods). Instead, a service represents a logical set of pods and acts as a gateway, allowing (client) pods to send requests to the service without needing to keep track of which physical pods actually make up the service.
