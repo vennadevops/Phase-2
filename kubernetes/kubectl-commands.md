@@ -11,6 +11,8 @@ https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
 * kubectl cluster-info
 
+* kubectl get pods --all-namespaces -o wide
+
 * create the deployments/pods/containers
 
   kubectl create deployment [delployment-name] --image=[docker-image-name]
