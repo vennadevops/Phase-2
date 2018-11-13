@@ -19,5 +19,9 @@ If you don’t have the value of --discovery-token-ca-cert-hash, you can get it 
 
 kubeadm token create --print-join-command
 
+kubeadm config
+
+kubeadm upgrade
+
 
 
