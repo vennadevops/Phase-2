@@ -2,6 +2,8 @@
 
 * Check the logs if you have any issues: https://github.com/DevOpsBasicSetup/Phase-2/blob/master/kubernetes/KOPS/kops-logs.txt
 
+* https://github.com/kubernetes/kops/blob/master/docs/commands.md
+
 #### Step-1: Create the Access Key Id & Secret Key in AWS console. 
 
 	Create a user and group with below permissions:
