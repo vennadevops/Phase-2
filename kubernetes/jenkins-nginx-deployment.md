@@ -12,19 +12,19 @@ find / -name "nginx"
 
 find / -name "jenkins"
 
-Ctrl + p + q
+exit (or) Ctrl + p + q
 
 kubectl exec -it [pod-name] -c jenkins-container -- bin/bash
 
 cd /var/jenkins_home/
 
-Ctrl + p + q
+exit (or) Ctrl + p + q
 
 kubectl exec -it [pod-name] -c nginx-container -- bin/bash
 
 cd /usr/share/nginx/html
 
-Ctrl + p + q
+exit (or) Ctrl + p + q
 
 kubectl cp [source] [pod-name]:[container-path] -c [container-name]
 
