@@ -69,7 +69,7 @@ Kubernetes Cluster
 	
 	Ex: kubectl create deployment nginx --image=nginx 
 
-3. Create service for our deployment.
+3. Create service for our deployment. (or expose the deployment to access publicly)
 
 	kubectl create service [portTypes] [deploymentName] --tcp=[ports]
 	
