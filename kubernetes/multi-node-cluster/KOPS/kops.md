@@ -79,9 +79,13 @@ Step-4: Configure the AWS credentials: Run the command and enter the access key 
 
 #### Step-7: ssh-keygen -t rsa
 
-#### Step-8: Creating k8s cluster in AWS: 
+#### Step-8: Creating k8s cluster in AWS:
 
-	8.1. kops create cluster --node-count=3 --node-size=t2.medium --zones=us-west-1a --name=${KOPS_CLUSTER_NAME}
+	8.1. Run only either 8.1.1 or 8.1.2. as per your requirement.
+	
+		8.1.1. Single-Master cluster: kops create cluster --node-count=3 --node-size=t2.medium --zones=us-west-1a --name=${KOPS_CLUSTER_NAME}
+	
+		8.1.2. Multi-Master cluste: kops create cluster --node-count=3 --node-size=t2.micro --zones=us-east-2a,us-east-2b,us-east-2c --master-count=3 --master-size=t2.medium --master-zones us-east-2a,us-east-2b,us-east-2c --name=${KOPS_CLUSTER_NAME}
 
 	8.2. Finally configure your cluster with: kops update cluster --name ${KOPS_CLUSTER_NAME} --yes
 	
