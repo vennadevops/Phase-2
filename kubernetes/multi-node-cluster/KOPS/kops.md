@@ -4,6 +4,8 @@
 
 * https://github.com/kubernetes/kops/blob/master/docs/commands.md
 
+* https://kubernetes.io/docs/setup/custom-cloud/kops/
+
 #### Step-1: Create the Access Key Id & Secret Key in AWS console. 
 
 	Create a user and group with below permissions:
