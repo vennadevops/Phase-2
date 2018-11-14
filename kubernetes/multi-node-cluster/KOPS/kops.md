@@ -91,7 +91,7 @@ Step-4: Configure the AWS credentials: Run the command and enter the access key 
 	
 	8.3. See the cluser info: kops edit cluster --name ${KOPS_CLUSTER_NAME}
 
-	8.4. kubectl get nodes (wait for sometime to create the cluster the and the cluster available.)
+	8.4. kubectl get nodes (wait for few mins to create the cluster the and the cluster is available.)
 	
 	8.5. Above command mentioned at the point 8.2. may take some time to create the required infrastructure resources on AWS. Execute the validate command to check its status and wait until the cluster becomes ready: kops validate cluster
 	
