@@ -38,7 +38,7 @@
 
 	apt-get update
 
-	apt-get install -y kubelet kubectl kubernetes-cni
+	apt-get install -y kubectl
 	
 	apt install awscli -y
 	
