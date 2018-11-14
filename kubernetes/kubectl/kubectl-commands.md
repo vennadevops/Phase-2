@@ -57,6 +57,18 @@ https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
 * kubectl logs [pod name]
 
+    kubectl logs [pod name]
+    
+    kubectl logs [pod name] --all-containers=true
+    
+    kubectl logs --tail=20 [pod name] # Display only the most recent 20 lines of output in pod nginx
+    
+    kubectl logs -f -c ruby web-1 # Begin streaming the logs of the ruby container in pod web-1
+    
+    kubectl logs -p -c ruby web-1 
+    
+    kubectl logs --since=1h nginx # Show all logs from pod nginx written in the last hour
+
 * kubectl apply:
 
   ex: kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
