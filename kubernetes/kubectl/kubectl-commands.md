@@ -75,7 +75,6 @@ https://kubernetes.io/docs/reference/kubectl/cheatsheet/
     
 * kubectl get replicationcontroller <rc-name>
 
-
 * kubectl exec POD [-c CONTAINER] [-i] [-t] [flags] [-- COMMAND [args...]]
 
     ex: kubectl exec [pod-name] date
@@ -83,6 +82,8 @@ https://kubernetes.io/docs/reference/kubectl/cheatsheet/
     kubectl exec -ti <pod-name> /bin/bash --> it will interact with first created container
     
     kubectl exec -ti <pod-name> -c <container-name> /bin/bash --> it will interact with specified container, if you are not sure about the container name, describe pod.  kubectl describe pod [pod-name].
+    
+    kubectl exec -it [pod-name] -c [container-name] -- [command]
     
 * kubectl plugin list
 
