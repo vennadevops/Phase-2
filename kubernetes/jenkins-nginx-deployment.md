@@ -1,6 +1,6 @@
 ### two containers in a single pod
 
-kubectl create -f [nginx-service.yml](yml/nginx-service.yml)
+kubectl create -f [nginx-jenkins.yml](yml/nginx-jenkins.yml.yml)
 
 kubectl get all -o wide
 
