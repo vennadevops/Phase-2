@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jen-nginx-deployment
+  name: jenkins-nginx-deployment
 spec:
   selector:
     matchLabels:
