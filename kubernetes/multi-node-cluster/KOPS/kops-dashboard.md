@@ -37,7 +37,12 @@
 
 #### Nodes
 
+![image](https://user-images.githubusercontent.com/24622526/48542806-1fe4a380-e8e6-11e8-89f3-1a8782bcd1e9.png)
+
 #### Deployments
+
+![image](https://user-images.githubusercontent.com/24622526/48542881-4a366100-e8e6-11e8-957f-c7dc38324830.png)
+
 
 #### Pods
 
@@ -46,4 +51,9 @@
 
 #### Replica Sets
 
+![image](https://user-images.githubusercontent.com/24622526/48542935-620de500-e8e6-11e8-9cf3-fd527bda2d02.png)
+
+
 #### Services
+
+![image](https://user-images.githubusercontent.com/24622526/48542975-7ce05980-e8e6-11e8-8b11-888b8f099af6.png)
