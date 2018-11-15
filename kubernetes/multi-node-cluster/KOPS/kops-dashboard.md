@@ -4,7 +4,7 @@
       kubectl apply -f https://raw.githubusercontent.com/kubernetes/kops/master/addons/kubernetes-dashboard/v1.10.0.yaml
       
    
-   Form the dashboard url: https://[master-url]/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+   **Form the dashboard url**: https://*master-url*/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
     
    ex: https://api-venkat-k8s-local-2ej051-1706456420.us-east-2.elb.amazonaws.com/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
    
