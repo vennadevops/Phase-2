@@ -14,7 +14,7 @@ spec:
     spec:
       volumes:
       - name: nginx-data
-      emptyDir: {}
+        emptyDir: {}
       containers:
       - name: nginx
         image: nginx
