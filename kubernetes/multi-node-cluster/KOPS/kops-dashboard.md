@@ -8,7 +8,7 @@
     
    ex: https://api-venkat-k8s-local-2ej051-1706456420.us-east-2.elb.amazonaws.com/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
    
-   Run the command *kubectl cluster-info* to know the [master-url].
+   Run the command *kubectl cluster-info* to know the [master-url]. Copy the first URL from the below list.
    
    ![image](https://user-images.githubusercontent.com/24622526/48543751-27a54780-e8e8-11e8-91d5-26ee3e137c44.png)
 
