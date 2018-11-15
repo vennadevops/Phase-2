@@ -1,4 +1,22 @@
 
+#### Create a dashboard for cluster
+
+      kubectl apply -f https://raw.githubusercontent.com/kubernetes/kops/master/addons/kubernetes-dashboard/v1.10.0.yaml
+      
+   
+   Form the dashboard url: https://[master-url]/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+    
+   Run the command **kubectl cluster-info** to know the [master-url].
+   
+   ex: https://api-venkat-k8s-local-2ej051-1706456420.us-east-2.elb.amazonaws.com/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+
+  Launch the dashboard URL in any browser,
+  
+  ![image](https://user-images.githubusercontent.com/24622526/48543684-0e9c9680-e8e8-11e8-9008-0fd924a99749.png)
+
+  
+   Get the admin password token by running the command: **kops get secrets kube --type secret -oplaintext**.
+
 #### Accessing Dashboard:
 
 ![image](https://user-images.githubusercontent.com/24622526/48541627-0b52dc00-e8e3-11e8-9ebc-4a2f3ca22b69.png)
