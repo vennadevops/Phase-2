@@ -18,8 +18,9 @@
   ![image](https://user-images.githubusercontent.com/24622526/48543684-0e9c9680-e8e8-11e8-9008-0fd924a99749.png)
 
   Enter the credentials:
-  Username: admin
-  Password: Get the *admin* password token by running the command: *kops get secrets kube --type secret -oplaintext*.
+  
+  * Username: admin
+  * Password: Get the *admin* password token by running the command: *kops get secrets kube --type secret -oplaintext*.
     
 
 #### Accessing Dashboard:
