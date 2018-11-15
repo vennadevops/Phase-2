@@ -11,10 +11,39 @@
 
 ![image](https://user-images.githubusercontent.com/24622526/48541837-93d17c80-e8e3-11e8-85ac-8320952e236c.png)
 
+#### Image details
+
 ![image](https://user-images.githubusercontent.com/24622526/48541986-fdea2180-e8e3-11e8-863f-f88714b0885c.png)
+
+#### Deployment status
 
 ![image](https://user-images.githubusercontent.com/24622526/48541704-3c331100-e8e3-11e8-87b4-0d1338c88711.png)
 
+#### After the deployment
+
 ![image](https://user-images.githubusercontent.com/24622526/48541786-73092700-e8e3-11e8-90a2-2bd53e3dc8c1.png)
 
+#### Port details and access the app
 
+![image](https://user-images.githubusercontent.com/24622526/48542510-553cc180-e8e5-11e8-9400-26f9b47da1d7.png)
+
+#### Create the deployment for sonarqube
+
+![image](https://user-images.githubusercontent.com/24622526/48542320-dc3d6a00-e8e4-11e8-9c0c-9a1da53cafe5.png)
+
+#### Failed status of sonar
+
+![image](https://user-images.githubusercontent.com/24622526/48542596-9634d600-e8e5-11e8-9b82-e71dfee3d85f.png)
+
+#### Nodes
+
+#### Deployments
+
+#### Pods
+
+![image](https://user-images.githubusercontent.com/24622526/48542675-cda38280-e8e5-11e8-9301-8b257ddbf688.png)
+
+
+#### Replica Sets
+
+#### Services
