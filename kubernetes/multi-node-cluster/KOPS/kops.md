@@ -103,6 +103,10 @@ Step-4: Configure the AWS credentials: Run the command and enter the access key 
 
 ![image](https://user-images.githubusercontent.com/24622526/45142130-40d29f00-b1a7-11e8-89a5-eb9da3b859e6.png)
 
+#### Setup Dash board:
+
+	https://github.com/DevOpsPlatform/Phase-2/blob/master/kubernetes/multi-node-cluster/KOPS/kops-dashboard.md
+
 #### Step-9: Create deployment:
 
 	kubectl create deployment nginx --image=nginx
