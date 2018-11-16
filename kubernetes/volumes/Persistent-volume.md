@@ -6,7 +6,7 @@ https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persis
 
 mkdir /mnt/nginx_vol
 
-echo "<center><h1>I am from $hostname</h1></center>" > /mnt/nginx_vol/index.html
+    echo "<center><h1>I am from $hostname</h1></center>" > /mnt/nginx_vol/index.html
 
 kubectl create -f https://raw.githubusercontent.com/DevOpsPlatform/Phase-2/master/kubernetes/yml/PV/nginx-pv-volume.yml
 
