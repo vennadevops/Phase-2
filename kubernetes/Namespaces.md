@@ -42,3 +42,20 @@ https://kubernetes.io/docs/tasks/administer-cluster/namespaces-walkthrough/
             prod          Active   25s
             qa            Active   37s
             root@k8s-master:~#
+            
+            
+* Create the deployment: 
+
+            kubectl create deployment jen-deploy --namespace=dev --image=jenkins
+            
+            kubectl create deployment nginx-deploy --namespace=dev --image=nginx
+            
+            kubectl create deployment sonarqube-deploy --namespace=qa --image=sonarqube
+            
+            kubectl create deployment devopswebapp --namespace=prod --image=venkatasykam/devopswebapp:1.0.13
+
+* list deployment/pods/rs under the namespace *dev*
+
+            kubectl get all --namespace=dev
+            
+            
