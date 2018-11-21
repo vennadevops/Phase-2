@@ -14,7 +14,7 @@
 
 #### Step-3: Java file to connect to database. Copy this fie into your docker server where you want to build docker image from dockerfile.
 
-    [DockerConnectMySQL.java](DockerConnectMySQL.java)
+   [DockerConnectMySQL.java](DockerConnectMySQL.java)
 
 #### Step-4: Docker file
 
