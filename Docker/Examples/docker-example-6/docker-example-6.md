@@ -44,3 +44,8 @@
     , Address: Jackal Creek
     , City: Johannesburg
 
+#### Step-7: Remove containers & images
+
+       docker rm db linkcontainers -f (or) docker rm $(docker ps -a -q) -f
+       
+       docker rmi javadbapp java mysql (or) docker rmi $(docker images -a -q)
