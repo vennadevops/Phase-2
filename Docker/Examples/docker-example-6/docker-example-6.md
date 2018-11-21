@@ -36,13 +36,14 @@
     
     Output:
     root@ip-172-31-46-207:~# docker run --name linkcontainers --link db javadbapp
-    Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
     Connecting to database...
     ID: 1
     , First: Online
     , Last: DevOps
     , Address: Kondapur
     , City: Hyderabad
+    root@ip-172-31-46-207:~#
+
 
 #### Step-7: Remove containers & images
 
