@@ -11,7 +11,7 @@ public class DockerConnectMySQL {
    Connection conn = null;
    Statement stmt = null;
    try{
-      Class.forName("com.mysql.jdbc.Driver");
+      Class.forName("com.mysql.cj.jdbc.Driver");
 
       System.out.println("Connecting to database...");
       conn = DriverManager.getConnection(DB_URL,USER,PASS);
