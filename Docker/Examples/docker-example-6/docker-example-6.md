@@ -1,3 +1,5 @@
+Refer: https://www.linkedin.com/pulse/running-java-application-mysql-linked-docker-deepak-sureshkumar
+
 #### Step-1: Run the mysql db container
 
     docker run -d --name db -e MYSQL_ROOT_PASSWORD=simple -e MYSQL_DATABASE=firstdb -e MYSQL_USER=user -e MYSQL_PASSWORD=pass123 mysql
