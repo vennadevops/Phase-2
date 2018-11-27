@@ -18,7 +18,7 @@ How to create Docker container?
 How to stop and restart the Docker container?
 What platforms does Docker run on?
 Do I lose my data when the Docker container exits?
-Mention some commonly used Docker command? (dockerd, commit, info, build, load, diff etc)
+Mention some commonly used Docker command? (dockerd, history, commit, info, build, load, diff etc)
 
 What are the networks that are available by default? - docker network ls (bridge, host, none)
 What is the use case for Docker?
