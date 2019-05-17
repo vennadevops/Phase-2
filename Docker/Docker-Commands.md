@@ -63,3 +63,70 @@
       docker logs [first 3 letters of container-id]
     30. docker cp or docker container cp: see the examples folder.
     31. docker diff container-id (run this command after docker cp)
+    
+    docker swarm: https://github.com/DevOpsPlatform/Phase-2/blob/master/Docker/DockerSwarm/swarm-mode.md
+    
+    32. docker swarm init --advertise-addr [manager-ip]
+    33. docker node ls
+    34. docker swarm join
+    35. docker service create
+    36. docker service ls
+    37. docker service ps
+    38. docker service scale
+    39. docker service update
+    40. docker service
+    41. docker swarm join-token manager -q
+    42. docker swarm join-token worker -q
+    43. docker service --help
+    44. docker service inspect --pretty [service-name]
+    45. docker service inspect [service-name]
+    46. docker service ps [service-name]
+    47. docker service scale [service-name]=5
+    48. docker service rm [service-name]
+    49. docker swarm init --force-new-cluster
+
+## docker compose:
+
+    * dokcer-compose up -d
+    * dokcer-compose down
+    * dokcer-compose -f docker-compose.yml up -d
+    * docker-compose -h
+    * docker-compose version
+    
+## docker machine:
+
+    * docker-machine --help
+
+    * docker-machine create --help
+
+    * docker-machine create --driver amazonec2 --help
+
+    * docker-machine ls
+
+    * docker-machine active
+
+    * docker-machine ip machine-name
+
+    * docker-machine stop machine-name
+
+    * docker-machine start machine-name
+
+    * docker-machine restart machine-name
+
+    * docker-machine kill machine-name
+
+    * docker-machine rm machine-name
+
+    * docker-machine rm -f $(docker-machine ls -q)
+
+    * docker-machine env machine-name
+
+    * docker-machine config machine-name
+
+    * docker-machine inspect machine-name
+
+    * docker-machine status machine-name
+
+    * docker-machine ssh machine-name
+
+    * Uninstall docker-machine from our machine: rm $(which docker-machine)
